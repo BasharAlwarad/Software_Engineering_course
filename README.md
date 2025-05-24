@@ -299,6 +299,89 @@ Convert the following:
 
 ---
 
+## The journey of character A
+
+```mermaid
+flowchart TD
+A[Input: Character 'A'] --> B[ASCII Encoding: 65 decimal]
+B --> C[Binary Conversion: 01000001 8 bits]
+C --> D[Stored in RAM]
+D --> E1[0 = low voltage]
+D --> E2[1 = high voltage]
+D --> E3[0 = low voltage]
+D --> E4[0 = low voltage]
+D --> E5[0 = low voltage]
+D --> E6[0 = low voltage]
+D --> E7[0 = low voltage]
+D --> E8[1 = high voltage]
+
+    style E2 fill:#8fbc8f,color:#fff
+    style E8 fill:#8fbc8f,color:#fff
+
+```
+
+## The journey of color White
+
+```mermaid
+flowchart TD
+A[Input: Color 'White'] --> B[RGB Encoding: 255, 255, 255]
+B --> C[Binary Conversion]
+C --> R[Red: 11111111]
+C --> G[Green: 11111111]
+C --> B_[Blue: 11111111]
+R --> R1[1 = high voltage]
+R --> R2[1 = high voltage]
+R --> R3[1 = high voltage]
+R --> R4[1 = high voltage]
+R --> R5[1 = high voltage]
+R --> R6[1 = high voltage]
+R --> R7[1 = high voltage]
+R --> R8[1 = high voltage]
+G --> G1[1 = high voltage]
+G --> G2[1 = high voltage]
+G --> G3[1 = high voltage]
+G --> G4[1 = high voltage]
+G --> G5[1 = high voltage]
+G --> G6[1 = high voltage]
+G --> G7[1 = high voltage]
+G --> G8[1 = high voltage]
+B_ --> B1[1 = high voltage]
+B_ --> B2[1 = high voltage]
+B_ --> B3[1 = high voltage]
+B_ --> B4[1 = high voltage]
+B_ --> B5[1 = high voltage]
+B_ --> B6[1 = high voltage]
+B_ --> B7[1 = high voltage]
+B_ --> B8[1 = high voltage]
+
+    style R1 fill:#8fbc8f,color:#fff
+    style R2 fill:#8fbc8f,color:#fff
+    style R3 fill:#8fbc8f,color:#fff
+    style R4 fill:#8fbc8f,color:#fff
+    style R5 fill:#8fbc8f,color:#fff
+    style R6 fill:#8fbc8f,color:#fff
+    style R7 fill:#8fbc8f,color:#fff
+    style R8 fill:#8fbc8f,color:#fff
+
+    style G1 fill:#8fbc8f,color:#fff
+    style G2 fill:#8fbc8f,color:#fff
+    style G3 fill:#8fbc8f,color:#fff
+    style G4 fill:#8fbc8f,color:#fff
+    style G5 fill:#8fbc8f,color:#fff
+    style G6 fill:#8fbc8f,color:#fff
+    style G7 fill:#8fbc8f,color:#fff
+    style G8 fill:#8fbc8f,color:#fff
+
+    style B1 fill:#8fbc8f,color:#fff
+    style B2 fill:#8fbc8f,color:#fff
+    style B3 fill:#8fbc8f,color:#fff
+    style B4 fill:#8fbc8f,color:#fff
+    style B5 fill:#8fbc8f,color:#fff
+    style B6 fill:#8fbc8f,color:#fff
+    style B7 fill:#8fbc8f,color:#fff
+    style B8 fill:#8fbc8f,color:#fff
+```
+
 ## 📚 Further Reading
 
 - [Binary Number System - Wikipedia](https://en.wikipedia.org/wiki/Binary_number)
