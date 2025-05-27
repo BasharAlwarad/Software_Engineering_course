@@ -30,6 +30,8 @@ This basic unit of information is called a **bit**.
 
 ## 💡 Binary: The Language of Computers
 
+  <img src="images/binary_hand.jpg" alt="CPU" width="300"/>
+
 Binary is a **base-2** number system, using only the digits `0` and `1`.
 
 Each binary digit (bit) represents an increasing power of 2, starting from the right:
