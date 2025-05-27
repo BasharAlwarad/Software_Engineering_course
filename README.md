@@ -68,7 +68,7 @@ A **computer** is an electronic device that processes input data, performs opera
 - **Input**: Keyboard, mouse, microphone
 - **Output**: Monitor, speakers, printer
 
-<img src="images/input_output_devices.jpg" alt="CPU" width="300"/>
+<img src="images/input_output_devices.jpg" alt="CPU" width="600"/>
 
 ---
 
@@ -95,7 +95,9 @@ Example: Typing a Document
 graph TD
     A[⌨️ Input Devices] --> B[🧠 CPU]
     B --> C[💾 RAM]
+    C --> B
     B --> D[📦 Storage SSD/HDD]
+    D --> B
     B --> E[🎮 GPU]
     E --> F[🖥️ Display]
     B --> G[🔊 Output Devices]
