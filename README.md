@@ -1,393 +1,139 @@
-# 🧠 Understanding Number Systems in Computers
+# 🖥️ Intro to the Terminal: Zsh (macOS) & Bash (Windows)
 
-This file covers how data is stored in memory and how to interpret it using Binary, Decimal, and Hexadecimal formats.
-
----
-
-## 🧩 How Computer Memory Works
-
-All data inside a computer is stored using **transistors**. These transistors can only be in one of two states:
-
-- `0` → OFF
-- `1` → ON
-
-This basic unit of information is called a **bit**.
-
-  <img src="images/transistors.jpg" alt="CPU" width="300"/>
-
-### Scaling Up Memory Units
-
-| Unit       | Size            |
-| ---------- | --------------- |
-| 1 Bit      | Single 0 or 1   |
-| 8 Bits     | 1 Byte          |
-| 1024 Bytes | 1 Kilobyte (KB) |
-| 1024 KB    | 1 Megabyte (MB) |
-| 1024 MB    | 1 Gigabyte (GB) |
-| 1024 GB    | 1 Terabyte (TB) |
+Welcome! This short guide will teach you how to use the terminal on **macOS (Zsh)** and **Windows (Bash via Git Bash or WSL)**. It includes essential commands and a quick intro to the `nano` text editor.
 
 ---
 
-## 💡 Binary: The Language of Computers
+## ⚙️ What is the Terminal?
 
-  <img src="images/binary_hand.jpg" alt="CPU" width="300"/>
+The terminal is a **text-based interface** used to interact with your computer. It allows you to execute commands, manage files, and run programs without using a mouse.
 
-Binary is a **base-2** number system, using only the digits `0` and `1`.
-
-Each binary digit (bit) represents an increasing power of 2, starting from the right:
-
-| Bit Position | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
-| ------------ | --- | --- | --- | --- | --- | --- | --- | --- |
-| Power of 2   | 128 | 64  | 32  | 16  | 8   | 4   | 2   | 1   |
-
-### Example:
-
-Binary: `01001010`  
-Calculation: `0×128 + 1×64 + 0×32 + 0×16 + 1×8 + 0×4 + 1×2 + 0×1`  
-Result: **74 (Decimal)**
+- **macOS**: Uses **Zsh** (default since macOS Catalina).
+- **Windows**: Use **Git Bash** or **WSL (Windows Subsystem for Linux)** to access a Bash shell.
 
 ---
 
-## 🗂️ Memory Representation Table
+## ⚙️ why using Terminal?
 
-Memory is often visualized like a table, with each cell holding 1 byte (8 bits):
+### create txt file for users data
 
-| Address | Binary   | Decimal |
-| ------- | -------- | ------- |
-| 0x00    | 00000000 | 0       |
-| 0x01    | 00000001 | 1       |
-| 0x02    | 00000010 | 2       |
-| 0x03    | 00000011 | 3       |
-| ...     | ...      | ...     |
-
----
-
-## 📊 Binary System: How It Works
-
-### this chart shows value of 255
-
-```mermaid
-flowchart TB
-    B7["Bit number: 7<br>Binary = 1<br>Decimal = 128"]
-    B6["Bit number: 6<br>Binary = 1<br>Decimal = 64"]
-    B5["Bit number: 5<br>Binary = 1<br>Decimal = 32"]
-    B4["Bit number: 4<br>Binary = 1<br>Decimal = 16"]
-    B3["Bit number: 3<br>Binary = 1<br>Decimal = 8"]
-    B2["Bit number: 2<br>Binary = 1<br>Decimal = 4"]
-    B1["Bit number: 1<br>Binary = 1<br>Decimal = 2"]
-    B0["Bit number: 0<br>Binary = 1<br>Decimal = 1"]
-
-    B7 --> ADD
-    B6 --> ADD
-    B5 --> ADD
-    B4 --> ADD
-    B3 --> ADD
-    B2 --> ADD
-    B1 --> ADD
-    B0 --> ADD
-
-    ADD["<div style='width:500px'>One Byte<br>Binary = 11111111<br>Decimal Value:<br>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255</div>"]
-
-    style B7 fill:#8fbc8f,color:#fff
-    style B6 fill:#8fbc8f,color:#fff
-    style B5 fill:#8fbc8f,color:#fff
-    style B4 fill:#8fbc8f,color:#fff
-    style B3 fill:#8fbc8f,color:#fff
-    style B2 fill:#8fbc8f,color:#fff
-    style B1 fill:#8fbc8f,color:#fff
-    style B0 fill:#8fbc8f,color:#fff
+```bash
+mkdir testing;
+cd testing;
+users=("john doe 25" "jane smith 30" "mike brown 22" "sara jones 28" "lisa white 35" "mark black 24" "emma green 29" "noah hall 31" "olivia king 27" "liam lee 23" "ava scott 26" "ethan young 32" "mia adams 21" "lucas evans 33" "zoe hill 34" "alex clark 20" "chloe bell 36" "jack ward 38" "ella price 19" "ryan ross 37");
+for user in "${users[@]}";
+do set -- $user; echo -e "$1\\n$2\\n$3" > "$1.txt";
+done
 ```
 
-### this chart shows value 0f 250
+### remove all file with a specific value.
 
-```mermaid
-flowchart TB
-    B7["Bit number: 7<br>Binary = 1<br>Decimal = 128"]
-    B6["Bit number: 6<br>Binary = 1<br>Decimal = 64"]
-    B5["Bit number: 5<br>Binary = 1<br>Decimal = 32"]
-    B4["Bit number: 4<br>Binary = 1<br>Decimal = 16"]
-    B3["Bit number: 3<br>Binary = 1<br>Decimal = 8"]
-    B2["Bit number: 2<br>Binary = 0<br>Decimal = 0"]
-    B1["Bit number: 1<br>Binary = 1<br>Decimal = 2"]
-    B0["Bit number: 0<br>Binary = 0<br>Decimal = 0"]
-
-    B7 --> ADD
-    B6 --> ADD
-    B5 --> ADD
-    B4 --> ADD
-    B3 --> ADD
-    B2 --> ADD
-    B1 --> ADD
-    B0 --> ADD
-
-    ADD["<div style='width:500px'>One Byte<br>Binary = 11111010<br>Decimal Value:<br>128 + 64 + 32 + 16 + 8 + 0 + 2 + 0 = 250</div>"]
-
-    style B7 fill:#8fbc8f,color:#fff
-    style B6 fill:#8fbc8f,color:#fff
-    style B5 fill:#8fbc8f,color:#fff
-    style B4 fill:#8fbc8f,color:#fff
-    style B3 fill:#8fbc8f,color:#fff
-    style B1 fill:#8fbc8f,color:#fff
+```bash
+cd testing && grep -l "3" *.txt | xargs rm
 ```
 
-### this chart shows value 0f ?
+## 💡 Basic Concepts
 
-```mermaid
-flowchart TB
-    B7["Bit number: 7<br>Binary = 1<br>Decimal = 128"]
-    B6["Bit number: 6<br>Binary = 1<br>Decimal = 64"]
-    B5["Bit number: 5<br>Binary = 0<br>Decimal = 0"]
-    B4["Bit number: 4<br>Binary = 1<br>Decimal = 16"]
-    B3["Bit number: 3<br>Binary = 1<br>Decimal = 8"]
-    B2["Bit number: 2<br>Binary = 0<br>Decimal = 0"]
-    B1["Bit number: 1<br>Binary = 1<br>Decimal = 2"]
-    B0["Bit number: 0<br>Binary = 0<br>Decimal = 0"]
+| Term          | Description                                         |
+| ------------- | --------------------------------------------------- |
+| **Shell**     | Program that runs in the terminal (Zsh, Bash, etc.) |
+| **Prompt**    | Where you type commands (`$`, `➜`, etc.)            |
+| **Directory** | The current folder you're working in                |
 
-    B7 --> ADD
-    B6 --> ADD
-    B5 --> ADD
-    B4 --> ADD
-    B3 --> ADD
-    B2 --> ADD
-    B1 --> ADD
-    B0 --> ADD
+---
 
-    ADD["<div style='width:500px'>One Byte<br>Binary = 11011010<br>Decimal Value:<br>?</div>"]
+## 📁 Navigation Commands
 
-    style B7 fill:#8fbc8f,color:#fff
-    style B6 fill:#8fbc8f,color:#fff
-    style B4 fill:#8fbc8f,color:#fff
-    style B3 fill:#8fbc8f,color:#fff
-    style B1 fill:#8fbc8f,color:#fff
+| Command         | Description                     |
+| --------------- | ------------------------------- |
+| `pwd`           | Print current working directory |
+| `ls`            | List files and folders          |
+| `cd foldername` | Change into a folder            |
+| `cd ..`         | Go up one directory             |
+| `cd ~`          | Go to home directory            |
+
+---
+
+## 📄 File and Folder Management
+
+| Command                  | Description                      |
+| ------------------------ | -------------------------------- |
+| `mkdir myFolder`         | Create a new folder              |
+| `touch file.txt`         | Create a new empty file          |
+| `rm file.txt`            | Delete a file                    |
+| `rm -r folder/`          | Delete a folder and its contents |
+| `cp file.txt backup.txt` | Copy a file                      |
+| `mv old.txt new.txt`     | Rename or move a file            |
+
+---
+
+## ⚙️ Useful Commands
+
+| Command                             | Description                              |
+| ----------------------------------- | ---------------------------------------- |
+| `clear`                             | Clear the terminal screen                |
+| `history`                           | Show list of previously used commands    |
+| `man ls`                            | Show manual/help for a command           |
+| `echo "Hello"`                      | Print text to the screen                 |
+| `open .` (mac) / `explorer .` (win) | Open the current folder in file explorer |
+
+---
+
+## 🧠 Tips & Shortcuts
+
+| Shortcut   | Function                           |
+| ---------- | ---------------------------------- |
+| `Tab`      | Auto-complete command or file name |
+| `Ctrl + C` | Cancel running command             |
+| `↑` / `↓`  | Browse command history             |
+
+---
+
+## ✍️ Editing Files with `nano`
+
+`nano` is a simple, beginner-friendly command-line text editor.
+
+### 📌 Open or Create a File:
+
+```bash
+nano notes.txt
 ```
 
-## 🔢 Decimal System (Base-10)
+### 🛠 Basic Commands (at bottom of nano):
 
-Decimal is the standard number system we use in daily life.
+| Shortcut   | Action                  |
+| ---------- | ----------------------- |
+| `Ctrl + O` | Save file ("Write Out") |
+| `Ctrl + X` | Exit nano               |
+| `Ctrl + K` | Cut a line              |
+| `Ctrl + U` | Paste a line            |
+| `Ctrl + W` | Search text             |
 
-It uses 10 digits: `0-9`. Each position represents a power of **10**.
-
-### Example:
-
-`543 = 5×100 + 4×10 + 3×1`
-
----
-
-## 🔄 Converting Binary to Decimal
-
-To convert binary to decimal:
-
-1. Write the binary number.
-2. Multiply each bit by 2 raised to its position index (starting from 0 at the right).
-3. Add all values.
-
-### Example:
-
-Binary: `1011`  
-Calculation: `1×8 + 0×4 + 1×2 + 1×1 = 11`  
-Decimal: **11**
+> **Note:** You can move the cursor with arrow keys.
 
 ---
 
-## 🧮 Hexadecimal System (Base-16)
+## 🧪 Practice Tasks
 
-Hexadecimal uses **16 digits**: `0-9` and `A-F`
+Try the following:
 
-| Hex | Decimal | Binary |
-| --- | ------- | ------ |
-| 0   | 0       | 0000   |
-| 1   | 1       | 0001   |
-| 2   | 2       | 0010   |
-| 3   | 3       | 0011   |
-| 4   | 4       | 0100   |
-| 5   | 5       | 0101   |
-| 6   | 6       | 0110   |
-| 7   | 7       | 0111   |
-| 8   | 8       | 1000   |
-| 9   | 9       | 1001   |
-| A   | 10      | 1010   |
-| B   | 11      | 1011   |
-| C   | 12      | 1100   |
-| D   | 13      | 1101   |
-| E   | 14      | 1110   |
-| F   | 15      | 1111   |
-
-### Chart in Hexadecimal
-
-```mermaid
-flowchart TB
-    B7["Bit number: 7<br>Binary = 1<br>Decimal = 128"]
-    B6["Bit number: 6<br>Binary = 1<br>Decimal = 64"]
-    B5["Bit number: 5<br>Binary = 1<br>Decimal = 32"]
-    B4["Bit number: 4<br>Binary = 1<br>Decimal = 16"]
-    B3["Bit number: 3<br>Binary = 1<br>Decimal = 8"]
-    B2["Bit number: 2<br>Binary = 1<br>Decimal = 4"]
-    B1["Bit number: 1<br>Binary = 1<br>Decimal = 2"]
-    B0["Bit number: 0<br>Binary = 1<br>Decimal = 1"]
-
-    HEX1["Binary = 1111<br>Hexadecimal = F<br>Decimal: 15 * 16¹ = 240"]
-    HEX2["Binary = 1111<br>Hexadecimal = F<br>Decimal: 15 * 16⁰ = 15"]
-
-
-    B7 --> HEX1
-    B6 --> HEX1
-    B5 --> HEX1
-    B4 --> HEX1
-    B3 --> HEX2
-    B2 --> HEX2
-    B1 --> HEX2
-    B0 --> HEX2
-
-    HEX1 --> ADD
-    HEX2 --> ADD
-
-    ADD["<div style='width:500px'>One Byte<br>Binary = 11111111<br>Hexadecimal = FF or 15 15<br>Decimal Value: 16¹ * 15 + 16⁰ * 15 = 255<br> 15 × 16 + 15 × 1 = 255</div>"]
-
-    style B7 fill:#8fbc8f,color:#fff
-    style B6 fill:#8fbc8f,color:#fff
-    style B5 fill:#8fbc8f,color:#fff
-    style B4 fill:#8fbc8f,color:#fff
-    style B3 fill:#8fbc8f,color:#fff
-    style B2 fill:#8fbc8f,color:#fff
-    style B1 fill:#8fbc8f,color:#fff
-    style B0 fill:#8fbc8f,color:#fff
-```
-
-### Why Use Hex?
-
-- Shorter: `11110000` → `F0`
-- Easier to read and group binary
-
----
-
-## 🧭 Converting Binary to Hex
-
-Group the binary in 4-bit chunks from right to left, then convert each group:
-
-### Example:
-
-Binary: `11110000`  
-Groups: `1111` `0000`  
-Hex: `F0`
-
----
-
-## 🧾 Summary Table
-
-| Format      | Example  |
-| ----------- | -------- |
-| Binary      | 11001010 |
-| Decimal     | 202      |
-| Hexadecimal | CA       |
-
----
-
-## 🎓 Practice Task
-
-Convert the following:
-
-1. Binary `10010110` → Decimal: `?` → Hex: `?`
-2. Decimal `255` → Binary: `?` → Hex: `?`
-3. Hex `7F` → Binary: `?` → Decimal: `?`
-
-<details>
-<summary>💡 Answers</summary>
-
-1. Binary `10010110` → Decimal: 150 → Hex: `96`
-2. Decimal `255` → Binary: `11111111` → Hex: `FF`
-3. Hex `7F` → Binary: `01111111` → Decimal: `127`
-
-</details>
-
----
-
-## The journey of character A
-
-```mermaid
-flowchart TD
-A[Input: Character 'A'] --> B[ASCII Encoding: 65 decimal]
-B --> C[Binary Conversion: 01000001 8 bits]
-C --> D[Stored in RAM]
-D --> E1[0 = low voltage]
-D --> E2[1 = high voltage]
-D --> E3[0 = low voltage]
-D --> E4[0 = low voltage]
-D --> E5[0 = low voltage]
-D --> E6[0 = low voltage]
-D --> E7[0 = low voltage]
-D --> E8[1 = high voltage]
-
-    style E2 fill:#8fbc8f,color:#fff
-    style E8 fill:#8fbc8f,color:#fff
-
-```
-
-## The journey of color White
-
-```mermaid
-flowchart TD
-A[Input: Color 'White'] --> B[RGB Encoding: 255, 255, 255]
-B --> C[Binary Conversion]
-C --> R[Red: 11111111]
-C --> G[Green: 11111111]
-C --> B_[Blue: 11111111]
-R --> R1[1 = high voltage]
-R --> R2[1 = high voltage]
-R --> R3[1 = high voltage]
-R --> R4[1 = high voltage]
-R --> R5[1 = high voltage]
-R --> R6[1 = high voltage]
-R --> R7[1 = high voltage]
-R --> R8[1 = high voltage]
-G --> G1[1 = high voltage]
-G --> G2[1 = high voltage]
-G --> G3[1 = high voltage]
-G --> G4[1 = high voltage]
-G --> G5[1 = high voltage]
-G --> G6[1 = high voltage]
-G --> G7[1 = high voltage]
-G --> G8[1 = high voltage]
-B_ --> B1[1 = high voltage]
-B_ --> B2[1 = high voltage]
-B_ --> B3[1 = high voltage]
-B_ --> B4[1 = high voltage]
-B_ --> B5[1 = high voltage]
-B_ --> B6[1 = high voltage]
-B_ --> B7[1 = high voltage]
-B_ --> B8[1 = high voltage]
-
-    style R1 fill:#8fbc8f,color:#fff
-    style R2 fill:#8fbc8f,color:#fff
-    style R3 fill:#8fbc8f,color:#fff
-    style R4 fill:#8fbc8f,color:#fff
-    style R5 fill:#8fbc8f,color:#fff
-    style R6 fill:#8fbc8f,color:#fff
-    style R7 fill:#8fbc8f,color:#fff
-    style R8 fill:#8fbc8f,color:#fff
-
-    style G1 fill:#8fbc8f,color:#fff
-    style G2 fill:#8fbc8f,color:#fff
-    style G3 fill:#8fbc8f,color:#fff
-    style G4 fill:#8fbc8f,color:#fff
-    style G5 fill:#8fbc8f,color:#fff
-    style G6 fill:#8fbc8f,color:#fff
-    style G7 fill:#8fbc8f,color:#fff
-    style G8 fill:#8fbc8f,color:#fff
-
-    style B1 fill:#8fbc8f,color:#fff
-    style B2 fill:#8fbc8f,color:#fff
-    style B3 fill:#8fbc8f,color:#fff
-    style B4 fill:#8fbc8f,color:#fff
-    style B5 fill:#8fbc8f,color:#fff
-    style B6 fill:#8fbc8f,color:#fff
-    style B7 fill:#8fbc8f,color:#fff
-    style B8 fill:#8fbc8f,color:#fff
-```
-
-## 📚 Further Reading
-
-- [Binary Number System - Wikipedia](https://en.wikipedia.org/wiki/Binary_number)
-- [Hexadecimal - Wikipedia](https://en.wikipedia.org/wiki/Hexadecimal)
-- [How Computers Work (YouTube - CrashCourse)](https://www.youtube.com/watch?v=OAx_6-wdslM)
+1. Open your terminal.
+2. Navigate to your Desktop:
+   ```bash
+   cd ~/Desktop
+   ```
+3. Create a folder:
+   ```bash
+   mkdir practice
+   cd practice
+   ```
+4. Create a text file:
+   ```bash
+   touch notes.txt
+   ```
+5. Open it in `nano` and type some notes:
+   ```bash
+   nano notes.txt
+   ```
 
 ---
