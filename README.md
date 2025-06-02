@@ -1,4 +1,4 @@
-# 🍳 Teaching Pseudocode Through a Kitchen Cooking Scenario
+# 🍳 Pseudocode Through a Kitchen Cooking Scenario
 
 Welcome! This project introduces the **concept of pseudocode** by using a fun and relatable real-life scenario: **cooking in the kitchen**.
 
@@ -144,7 +144,6 @@ END FUNCTION
 ```text
 FUNCTION WAIT(minutes)
     PRINT "Waiting for " + minutes + " minute(s)..."
-    // Simulate a delay
 END FUNCTION
 ```
 
