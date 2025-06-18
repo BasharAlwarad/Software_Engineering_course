@@ -46,3 +46,18 @@
 ## refreshment on `log`
 
 log is inverse of exponent `log2 8=3`
+
+## Polynomial runtime `O(n ^ k)`
+
+### `O(ln n)`
+
+### Quadratic run time `n²` or `O(n²)`
+
+### Cubic run time `n³` or `O(n³)`
+
+### Quasilinear run time `O(n log n)`
+
+## Factorial / Combinatorial runtime `n!` `n(n-1)(n-2)...(2)(1)`
+
+factorial of 3 is `3*2*1=6`
+factorial of 4 is `4*3*2*1=24`
