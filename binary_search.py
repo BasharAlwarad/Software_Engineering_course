@@ -3,7 +3,7 @@ def binary_search(list, target):
     last = len(list)-1
     while first <= last:
         midpoint = (first+last)//2
-        print(first, last, midpoint)
+        print(first, midpoint, last)
         if list[midpoint] == target:
             return midpoint
         elif list[midpoint] < target:
@@ -13,6 +13,6 @@ def binary_search(list, target):
     return None
 
 
-myList = [i for i in range(0, 10)]
+myList = [i for i in range(0, 100)]
 
-print(binary_search(myList, 5))
+print(binary_search(myList, 2))
