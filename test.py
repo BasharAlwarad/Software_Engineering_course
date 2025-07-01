@@ -1,57 +1,69 @@
-# from array import array
-# import sys
-# import random
-# import time
+class MyBox:
+    def __init__(self, items):
+        self.items = items
 
-# # array.array is typed and contiguous
-# # x = array("i", (1, 2, 3, 4))
-# # for i in x:
-# #     print(f"value: {i} | address: {id(i)}")
-# # print(type(x), isinstance(x, array), isinstance(x, list), id(x))
+    def __len__(self):
+        return
 
-# # Python list is flexible and dynamic
-# # my_list = [1, 2, 3, 4]
-# # my_list.insert(0, 0)
-# # my_list.insert(3, 9)
-# # my_list.append(5)
-# # print(my_list)
-# # for i in my_list:
-# #     print(f"value: {i} | address: {id(i)}")
-# # print(140736397509576-140736397509544)
-# # print(140736397509608-140736397509576)
-# # Memory over-allocation in list
-# # a = []
-# # print(sys.getsizeof(a))  # bytes
-# # a.append(1)
-# # print(sys.getsizeof(a))
-# # a.append(2)
-# # a.append(3)
-# # a.append(4)
-# # a.append(5)
-# # a.append(5)
-# # a.append(5)
-# # a.append(5)
-# # print(sys.getsizeof(a))
 
-# # Performance comparison: list vs dict
+box = MyBox([1, 2, 3])
+print(len(box))  # 3
 
-# size = 1_000_000
-# data_list = list(range(size))
-# data_dict = {i: True for i in range(size)}
-# # search_item = random.randint(0, size - 1)
-# search_item = 1
-# # O(n)
-# print(search_item)
+# =========================================================================================================================================
+# fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape']
+# print([(i, x) for i, x in enumerate(fruits)])
 
-# start_time = time.time()
-# found = search_item in data_list
-# print(f"List search: {found} | Time: {time.time() - start_time:.6f}s")
+# Original approach - lambda in list comprehension with inline dict
+# print("Method 1 - Original:")
+# print("\n".join(
+#     [(lambda item: f"{str(item[1]+1)}: {item[0]}")(i) for i in {fruits[i]: i for i in range(len(fruits))}.items()]))
 
-# start_time = time.time()
-# found = search_item in data_dict
-# print(f"Dict search: {found} | Time: {time.time() - start_time:.6f}s")
+# print("\n" + "="*50 + "\n")
 
-import numpy as np
+# Method 2 - Using enumerate directly
+# print("Method 2 - Using enumerate:")
+# print("\n".join([f"{i+1}: {fruit}" for i, fruit in enumerate(fruits)]))
 
-arr = np.array([1, 2, 3, 4])
-print(arr, arr.dtype, arr.shape)
+# print("\n" + "="*50 + "\n")
+
+# Method 3 - Using map with lambda
+# print("Method 3 - Using map with lambda:")
+# print(list(map(lambda x: f"{x[0]+1}: {x[1]}", enumerate(fruits))))
+# print("\n".join(map(lambda x: f"{x[0]+1}: {x[1]}", enumerate(fruits))))
+
+# print("\n" + "="*50 + "\n")
+
+# Method 4 - Using range and indexing
+# print("Method 4 - Using range and indexing:")
+# print("\n".join([f"{i+1}: {fruits[i]}" for i in range(len(fruits))]))
+
+# print("\n" + "="*50 + "\n")
+
+# Method 5 - Using zip with range
+# print("Method 5 - Using zip with range:")
+# print(list(zip(range(1, len(fruits)+1), fruits)))
+# print("\n".join([f"{i}: {fruit}" for i, fruit in zip(
+#     range(1, len(fruits)+1), fruits)]))
+
+# print("\n" + "="*50 + "\n")
+
+# Method 6 - Using dictionary comprehension then lambda
+# print("Method 6 - Dict comprehension then lambda:")
+# fruit_dict = {fruit: i for i, fruit in enumerate(fruits)}
+# print("\n".join([(lambda k, v: f"{v+1}: {k}")(k, v)
+#       for k, v in fruit_dict.items()]))
+
+# print("\n" + "="*50 + "\n")
+
+# Method 7 - Using format() method with lambda
+# print("Method 7 - Using format() with lambda:")
+# def formatter(idx, name): return "{}: {}".format(idx+1, name)
+
+
+# print("\n".join([formatter(i, fruit) for i, fruit in enumerate(fruits)]))
+
+# print("\n" + "="*50 + "\n")
+
+# Method 8 - Using enumerate with start parameter
+# print("Method 8 - Enumerate with start:")
+# print("\n".join([f"{i}: {fruit}" for i, fruit in enumerate(fruits, 1)]))

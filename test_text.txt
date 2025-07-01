@@ -1,0 +1,5 @@
+Line 1: Hello World
+Line 2: Python is awesome
+Line 3: Generators are efficient
+Line 4: Yield is powerful
+Line 5: Memory efficient processing

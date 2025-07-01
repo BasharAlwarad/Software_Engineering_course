@@ -1,54 +1,51 @@
-def merge_sort(list):
-    """
-    Merge Sort Algorithm sort a list in ascending order
-    returns the new sorted list
-    Divide: Find the midpoint of the list a into sub lists
-    Conquer: Recursively sort the sub lists created in the pervious step
-    Combine: Merge the sorted sub lists created in the previous step
-    """
-    if len(list) <= 1:
-        return list
-    left_half, right_half = split(list)
-    left = merge_sort(left_half)
-    right = merge_sort(right_half)
+# from tabulate import tabulate
 
-    return merge(left, right)
+# merge_steps = []
 
 
-def split(list):
-    """
-    Split the list into two halves and return them
-    """
-    mid = len(list)//2
-    left_half = list[:mid]
-    right_half = list[mid:]
-    return (left_half, right_half)
+def merge_sort(lst):
+    if len(lst) <= 1:
+        return lst
 
+    mid = len(lst) // 2
+    left = merge_sort(lst[:mid])
+    right = merge_sort(lst[mid:])
 
-def merge(left, right):
-    """
-    Merge two lists into one list and sorting them in the process
-    """
-    l = []
+    result = []
     i = 0
     j = 0
-    while i <= len(left) and j < len(right):
+
+    while i < len(left) and j < len(right):
         if left[i] < right[j]:
-            l.append(left[i])
+            result.append(left[i])
             i += 1
         else:
-            l.append(right[j])
+            result.append(right[j])
             j += 1
-    while i < len(left):
-        l.append(left[i])
-        i += 1
-    while j < len(right):
-        l.append(right[j])
-        j += 1
 
-    return l
+    result += left[i:]
+    result += right[j:]
+
+    # Record this step
+    # merge_steps.append([
+    #     str(lst),
+    #     str(left),
+    #     str(right),
+    #     str(result)
+    # ])
+
+    return result
 
 
-someList = ["3", "2", "1", "5"]
+# Example usage
+unsorted = [3, 2, 1, 5, 7, 3, 8, 8, 4]
+sorted_result = merge_sort(unsorted)
 
-print(merge_sort(someList))
+# Print final result
+print("\nunsorted List:", unsorted)
+print("\nSorted List:", sorted_result)
+
+# Print steps table
+# headers = ["Original", "Left", "Right", "Merged"]
+# print("\nMerge Sort Steps:")
+# print(tabulate(merge_steps, headers=headers, tablefmt="fancy_grid"))
