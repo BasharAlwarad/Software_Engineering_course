@@ -1,19 +1,39 @@
 using System;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Hello_World.Examples
 {
     public static class Functions
     {
 
-        public static void Functions_fundamentals(string [] args)
+        static string greeting_message = "Hello and welcome!!";
+        public static void Functions_fundamentals(string[]? args = null)
         {
+            args ??= new string[] { "hey there" };
+            System.Console.WriteLine(args);
+            Change_state(ref greeting_message);
+            // Change_state(out greeting_message);
+            System.Console.WriteLine(Greeting(a:greeting_message));
+            System.Console.WriteLine(User_answer_question("How old are you"));
+        }
+        
 
-            System.Console.WriteLine(Greeting(args[0]));
+        static string Greeting(string a = "Hello and welcome!", int b=default)
+        {
+            return a;
         }
 
-        static string Greeting(string a)
+        static string User_answer_question(string user_input)
         {
-            return  a;
+            System.Console.Write($"{user_input}: ");
+            return Console.ReadLine() ?? string.Empty;
+        }
+
+        static void Change_state(ref string message)
+        // static void Change_state(out string message)
+        {
+            message = "hey there welcome!!!";
         }
         
     }

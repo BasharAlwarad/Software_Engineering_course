@@ -4,7 +4,7 @@ namespace Hello_World.Examples
 {
     public static class BasicConcepts
     {
-        
+
         public static void BasicInputOutput()
         {
             Console.WriteLine("\n=== Basic Input/Output ===");
@@ -23,7 +23,7 @@ namespace Hello_World.Examples
         public static void UserInfoWithAgeValidation()
         {
             Console.WriteLine("\n=== User Info with Age Validation ===");
-            
+
             Console.Write("What is your name: ");
             string? user_name = Console.ReadLine();
             Console.Write("What is your age: ");
@@ -50,14 +50,14 @@ namespace Hello_World.Examples
         public static void BasicMathOperations()
         {
             Console.WriteLine("\n=== Basic Math Operations ===");
-            
+
             Console.Write("First Number: ");
             int first = Convert.ToInt32(Console.ReadLine());
             Console.Write("Second Number: ");
             int second = Convert.ToInt32(Console.ReadLine());
             int result = first * second;
             Console.WriteLine($"{first} x {second} = {result}");
-            
+
             // Discount calculation
             Console.Write("Enter price for discount calculation: ");
             double price = Convert.ToDouble(Console.ReadLine());
@@ -67,10 +67,10 @@ namespace Hello_World.Examples
         public static void SwitchStatements()
         {
             Console.WriteLine("\n=== Switch Statements (Day of Week) ===");
-            
+
             Console.Write("What day is today (1-7): ");
             int today = Convert.ToInt32(Console.ReadLine());
-            
+
             switch (today)
             {
                 case 1:
@@ -93,12 +93,12 @@ namespace Hello_World.Examples
         public static void TryParseFunction()
         {
             Console.WriteLine("\n=== TryParse Function ===");
-            
+
             while (true)
             {
                 Console.Write("Enter your number: ");
                 string? user_input = Console.ReadLine();
-                
+
                 if (int.TryParse(user_input, out int number))
                 {
                     Console.WriteLine($"Your value: {number}");
@@ -110,5 +110,58 @@ namespace Hello_World.Examples
                 }
             }
         }
+
+        public static void Casting()
+        {
+            // Explicit casting
+            object obj = "Hello, World!";
+            int user_age = 34;
+            string userAge = Convert.ToString(user_age);
+
+            string str = (string)obj;
+
+            Console.WriteLine(str + user_age);
+
+            // Implicit casting
+            int intValue = 123;
+            double doubleValue = intValue; // Implicit conversion from int to double
+            Console.WriteLine(doubleValue);
+        }
+
+        public static void Operators()
+        {
+            int x = 5;
+            int y = 3;
+            bool z = !(x > y && x != 2 || x < 0);
+            System.Console.WriteLine(z);
+
+            string name = "John Doe";
+            char fromName = name[name.IndexOf('J')];
+            string surName = name.Substring(name.IndexOf('D'));
+            // string surName = name[name.IndexOf('D')..];
+
+            System.Console.WriteLine(fromName);
+            System.Console.WriteLine(surName);
+            System.Console.WriteLine(name.IndexOf('J'));
+            System.Console.WriteLine(!(x > y && x != 2 || x < 0) ? "yes" : x == 5 ? "5" : "no");
+            System.Console.WriteLine(!(x > y && x != 2 || x < 0) ? "yes" : null);
+        }
+        
+        public static void MyArray()
+    {
+    int[,,] numbers = { {{1, 4, 2,5}, {1, 4, 2,5}, {1, 4, 2,5}}, {{1, 4, 2,5}, {1, 4, 2,5}, {1, 4, 2,5}} };
+ 
+    System.Console.WriteLine(numbers.GetLength(0));
+    System.Console.WriteLine(numbers.GetLength(1));
+    System.Console.WriteLine(numbers.GetLength(2));
+
+    //   for (int i = 0; i < numbers.GetLength(0); i++) 
+    //   {  
+    //     for (int j = 0; j < numbers.GetLength(1); j++) 
+    //     {  
+    //       Console.WriteLine(numbers[i, j]);  
+    //     }  
+    //   }  
+    }
     }
 }

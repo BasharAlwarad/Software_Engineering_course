@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Hello_World.Examples;
 
 namespace Hello_World
@@ -10,9 +11,32 @@ namespace Hello_World
         static void Main(string[] args)
         {
             // Console.Title = name;
+            // BasicConcepts.BasicInputOutput();
+
+            // Vehicles.Vehicles_types();
+
+            try
+            {
+                // throw new Exception("cant create file");
+                // Files.CreateFile();
+                // Generics.GenericsDetails();
+                Records.RecordsDetails();
+
+            }
+
+            catch (System.Exception)
+            {
+                System.Console.WriteLine("catching exceptions");
+                throw;
+            }
+            
+            // Person john = new("John",33);
+            // System.Console.WriteLine(john.Name);
 
 
-            Functions.Functions_fundamentals(["Hello"]);
+            // Debugging.Debugging_example();
+            // Exceptions.Create_exception();
+            // Functions.Functions_fundamentals();
 
             /* using input to run files*/
             /*
