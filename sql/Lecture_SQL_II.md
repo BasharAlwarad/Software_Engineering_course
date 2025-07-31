@@ -513,5 +513,3 @@ ON users.id = orders.user_id ;
 3. **JOINs** = Built-in merge operations (like pandas merge, but faster)
 4. **SQL is declarative** = Say "what" you want, not "how" to get it
 5. **Performance** = SQL engines are optimized for these operations
-
-**Next steps:** Practice these concepts with real data and try converting your Python data processing code to SQL!

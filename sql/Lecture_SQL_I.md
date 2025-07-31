@@ -140,7 +140,6 @@ users = [
 Think of creating SQL tables like defining a Python class or dataclass - you're specifying the structure before adding data.
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#ffcc00', 'fontFamily': 'Handwritten', 'fontSize': '16px', 'sketch': true }}}%%
 graph LR;
     A[Start] --> B[Create Database];
     B --> C[Create Table];
@@ -526,25 +525,12 @@ result = [u for u in users if u["age"] < 20 or u["age"] > 25]
 
 ```sql
 -- Same logic as Python
-SELECT *
-FROM users
-WHERE age < 20 OR age > 25;
-```
-
-**Result**:
-| id | first_name | last_name | age |
-| --- | ---------- | --------- | --- |
-| 1 | John | Doe | 18 |
-| 2 | Bob | Dylan | 30 |
-
-**The key insight**: SQL WHERE is just like Python list comprehensions, but optimized for millions of records!
-
-```sql
--- Same logic as Python
 SELECT *    -- will return all rows
 FROM users  -- from table users
 WHERE age < 20 OR age > 25;   -- filter out columns with age value > 18
 ```
+
+**The key insight**: SQL WHERE is just like Python list comprehensions, but optimized for millions of records!
 
 | id  | first_name | last_name | age |
 | --- | ---------- | --------- | --- |
@@ -557,7 +543,7 @@ Data to the frontend will be as follows:
 const users = [
   { "id": 2, 2: 'Bob', "last_name": 'Dylan', "age": '30' },
   { "id": 3, 2: 'Jane', "last_name": 'Doe', "age": '25' },
-];
+]
 ```
 
 ### Using AND

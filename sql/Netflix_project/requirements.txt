@@ -1,0 +1,25 @@
+# Netflix SQL Learning Project - Requirements
+
+## System Requirements
+- Python 3.6 or higher
+- Windows, macOS, or Linux
+
+## Python Dependencies
+- sqlite3 (built-in with Python)
+- os (built-in with Python)
+- re (built-in with Python)
+- datetime (built-in with Python)
+
+No additional packages need to be installed!
+
+## File Requirements
+- netflix.sql (provided)
+- index.py (main script)
+- README.md (documentation)
+
+## Optional Files
+- run_project.bat (Windows batch script for easy execution)
+- exercises.md (additional practice exercises)
+
+## Database
+The project creates a local SQLite database file called `netflix.db` when you run it for the first time.
