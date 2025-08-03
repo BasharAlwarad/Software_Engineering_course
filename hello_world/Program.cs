@@ -19,8 +19,11 @@ namespace Hello_World
             {
                 // throw new Exception("cant create file");
                 // Files.CreateFile();
-                // Generics.GenericsDetails();
-                Records.RecordsDetails();
+                Generics<int>.SpeedChecker();
+                var genericsInner = new Generics<int>.GenericsInner<int>();
+                genericsInner.AddToList(4);
+                System.Console.WriteLine(genericsInner);
+                // Records.RecordsDetails();
 
             }
 
