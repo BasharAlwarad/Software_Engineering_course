@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block title %}User Profile - {{ name }}{% endblock
+%} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/user_profile.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="avatar">
+      <span>{{ name[0].upper() }}</span>
+    </div>
+    <h1>User Profile</h1>
+    <h2>Welcome, {{ name }}!</h2>
+  </div>
+
+  <div class="profile-content">
+    <div class="profile-info">
+      <h3>Profile Information</h3>
+      <div class="info-item">
+        <label>Username:</label>
+        <span>{{ name }}</span>
+      </div>
+      <div class="info-item">
+        <label>Member Since:</label>
+        <span>January 2025</span>
+      </div>
+      <div class="info-item">
+        <label>Status:</label>
+        <span class="status active">Active</span>
+      </div>
+    </div>
+
+    <div class="profile-description">
+      <h3>About URL Parameters</h3>
+      <p>
+        This page demonstrates URL parameters in Flask. The name "{{ name }}"
+        was passed as a parameter in the URL.
+      </p>
+      <p>Try changing the name in the URL to see how it updates dynamically!</p>
+
+      <div class="url-examples">
+        <h4>Try these URLs:</h4>
+        <ul>
+          <li>
+            <a href="{{ url_for('user_profile', name='Alice') }}"
+              >/user/Alice</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('user_profile', name='Bob') }}">/user/Bob</a>
+          </li>
+          <li>
+            <a href="{{ url_for('user_profile', name='Charlie') }}"
+              >/user/Charlie</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

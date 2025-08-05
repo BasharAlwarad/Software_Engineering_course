@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}Home - My Simple Flask App{% endblock
+%} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="hero-section">
+  <h1>Welcome to My Simple Flask App!</h1>
+  <p>This is a basic Flask application for teaching purposes.</p>
+</div>
+
+<div class="features-section">
+  <h2>Explore Our Features</h2>
+  <div class="feature-cards">
+    <div class="card">
+      <h3>About Page</h3>
+      <p>Learn more about this application</p>
+      <a href="{{ url_for('about') }}" class="btn">Learn More</a>
+    </div>
+    <div class="card">
+      <h3>Contact Us</h3>
+      <p>Get in touch with us</p>
+      <a href="{{ url_for('contact') }}" class="btn">Contact</a>
+    </div>
+    <div class="card">
+      <h3>User Profiles</h3>
+      <p>See how URL parameters work</p>
+      <a href="{{ url_for('user_profile', name='John') }}" class="btn"
+        >View Profile</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

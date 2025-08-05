@@ -1,0 +1,220 @@
+/* Contact page specific styles */
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.contact-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #27ae60;
+  border-radius: 2px;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.contact-info h2 {
+  color: #27ae60;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 0.5rem;
+}
+
+.contact-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #27ae60;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: #e8f5e8;
+  transform: translateX(5px);
+  box-shadow: 0 3px 10px rgba(39, 174, 96, 0.2);
+}
+
+.contact-item h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-item h3::before {
+  content: '📧';
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-item:nth-child(3) h3::before {
+  content: '📞';
+}
+
+.contact-item:nth-child(4) h3::before {
+  content: '🕒';
+}
+
+.contact-item p {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  color: #27ae60;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 0.5rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.contact-form .btn:hover {
+  background: linear-gradient(45deg, #229954, #27ae60);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-link .btn {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.back-link .btn:hover {
+  background: linear-gradient(45deg, #2980b9, #1f5582);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-info {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.contact-form {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-container h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-item {
+    padding: 1rem;
+  }
+}

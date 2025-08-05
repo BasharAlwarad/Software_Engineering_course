@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block title %}Hello World - My Simple Flask App{%
+endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/hello.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="hello-container">
+  <div class="hello-content">
+    <h1>Hello World!</h1>
+    <p>This route accepts both GET and POST requests.</p>
+
+    <div class="method-info">
+      <h2>HTTP Methods Demonstration</h2>
+      <div class="methods">
+        <div class="method-card">
+          <h3>GET Request</h3>
+          <p>
+            Used to retrieve data from the server. This is the default method
+            when you visit a URL in your browser.
+          </p>
+        </div>
+        <div class="method-card">
+          <h3>POST Request</h3>
+          <p>
+            Used to send data to the server, typically through forms or API
+            calls.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-form">
+      <h3>Try a POST Request</h3>
+      <form method="POST" action="{{ url_for('hello') }}">
+        <div class="form-group">
+          <label for="demo-input">Enter some text:</label>
+          <input
+            type="text"
+            id="demo-input"
+            name="demo-input"
+            placeholder="Type something..."
+          />
+        </div>
+        <button type="submit" class="btn">Send POST Request</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

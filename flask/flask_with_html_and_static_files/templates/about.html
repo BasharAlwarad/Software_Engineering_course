@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}About - My Simple Flask App{%
+endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/about.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="about-container">
+  <h1>About This App</h1>
+
+  <div class="about-content">
+    <div class="about-text">
+      <p>
+        This is a simple Flask web application created for educational purposes.
+      </p>
+      <p>
+        Flask is a lightweight web framework for Python that makes it easy to
+        build web applications quickly and with minimal code.
+      </p>
+
+      <h2>What You'll Learn</h2>
+      <ul>
+        <li>Creating routes and handling requests</li>
+        <li>Using templates with Jinja2</li>
+        <li>Serving static files (CSS, JavaScript, images)</li>
+        <li>URL parameters and routing</li>
+        <li>Error handling</li>
+      </ul>
+    </div>
+
+    <div class="about-image">
+      <div class="flask-info">
+        <h3>Flask Framework</h3>
+        <p>Micro web framework written in Python</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}
