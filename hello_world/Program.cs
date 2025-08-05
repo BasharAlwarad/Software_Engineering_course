@@ -17,12 +17,13 @@ namespace Hello_World
 
             try
             {
+                Linq.Linq_intro();
                 // throw new Exception("cant create file");
                 // Files.CreateFile();
-                Generics<int>.SpeedChecker();
-                var genericsInner = new Generics<int>.GenericsInner<int>();
-                genericsInner.AddToList(4);
-                System.Console.WriteLine(genericsInner);
+                // Generics<int>.SpeedChecker();
+                // var genericsInner = new Generics<int>.GenericsInner<int>();
+                // genericsInner.AddToList(4);
+                // System.Console.WriteLine(genericsInner);
                 // Records.RecordsDetails();
 
             }
