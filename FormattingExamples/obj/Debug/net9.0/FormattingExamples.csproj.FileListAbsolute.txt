@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\bin\Debug\net9.0\FormattingExamples.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\bin\Debug\net9.0\FormattingExamples.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\bin\Debug\net9.0\FormattingExamples.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\bin\Debug\net9.0\FormattingExamples.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\bin\Debug\net9.0\FormattingExamples.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\refint\FormattingExamples.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\FormattingExamples.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\FormattingExamples\obj\Debug\net9.0\ref\FormattingExamples.dll

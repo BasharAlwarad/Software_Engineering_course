@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\bin\Debug\net9.0\Records.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\bin\Debug\net9.0\Records.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\bin\Debug\net9.0\Records.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\bin\Debug\net9.0\Records.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\bin\Debug\net9.0\Records.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\refint\Records.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\Records.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\Records\obj\Debug\net9.0\ref\Records.dll

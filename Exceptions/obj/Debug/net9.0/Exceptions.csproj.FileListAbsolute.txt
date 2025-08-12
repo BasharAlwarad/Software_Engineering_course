@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\bin\Debug\net9.0\Exceptions.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\bin\Debug\net9.0\Exceptions.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\bin\Debug\net9.0\Exceptions.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\bin\Debug\net9.0\Exceptions.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\bin\Debug\net9.0\Exceptions.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\refint\Exceptions.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\Exceptions.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\Exceptions\obj\Debug\net9.0\ref\Exceptions.dll

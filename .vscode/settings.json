@@ -1,0 +1,16 @@
+{
+  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.enableEditorConfigSupport": true,
+  "omnisharp.useModernNet": true,
+  "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.showFunctions": true,
+  "editor.suggest.showKeywords": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "dotnet.formatting.organizeImportsOnFormat": true,
+  "cSpell.words": ["Alwarad", "Bashar"]
+}
