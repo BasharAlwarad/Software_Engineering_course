@@ -9,9 +9,10 @@ const submitAction = async (prevState, formData) => {
   console.log('Submitted:', { name, email, message });
   return { error: null, success: true };
 };
+
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
-const App = () => {
+const Login = () => {
   const [state, formAction, isPending] = useActionState(submitAction, {});
 
   const [{ name, email, message }, setFormData] = useState({
@@ -125,4 +126,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Login;
