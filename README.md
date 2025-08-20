@@ -142,3 +142,7 @@ Open `Software_Engineering_course.sln` in Visual Studio. Each project can be set
 - **Exceptions** - Demonstrates proper exception handling with multiple catch blocks
 - **Records** - Shows comprehensive comparison between records and classes
 - **Vehicle** - Abstract classes, interfaces, and enums in action
+
+### important links related to the lecture
+
+1. [Advance_LINQ_Tutorial](https://www.youtube.com/watch?v=5l2qA3Pc83M)

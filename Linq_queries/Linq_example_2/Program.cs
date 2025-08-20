@@ -94,16 +94,89 @@ class Program
             // System.Console.WriteLine(employeeList.Contains(searchEmployee));
 
             //// OfType filter operator
-            ArrayList mixedCollection = Data.GetHeterogeneousDataCollection();
+            // ArrayList mixedCollection = Data.GetHeterogeneousDataCollection();
 
-            // var stringResult =from s in mixedCollection.OfType<string>() select s;
-            var stringResult =from s in mixedCollection.OfType<Employee>() select s;
+            // // this example will filter only string values in the list
+            // var stringResult1 = from s in mixedCollection.OfType<string>() select s;
+            // foreach (var e in stringResult1)
+            // {
+            //     System.Console.WriteLine(e);
+            // }
 
-            foreach (var e in stringResult)
+            // // this example will filter only Employee class values in the list
+            // var stringResult2 = from s in mixedCollection.OfType<Employee>() select s;
+
+            // foreach (var e in stringResult2)
+            // {
+            //     System.Console.WriteLine(e.FirstName);
+            // }
+
+            ////ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault
+            // // use ElementAt if you know that there is an element at this location otherwise use ElementAtOrDefault
+            // // the default value for an int in C# is 0
+            // // the default value for an Obj in C# is null
+            // // the default value for a decimal in C# is 0.0            
+            // // the default value for a string in C# is null            
+            // // the default value for a list in C# is null            
+            // // the default value for a bool in C# is false            
+            // // var emp = employeeList.ElementAt(2);
+            // var emp = employeeList.ElementAtOrDefault(20);
+            // if (emp!=null)
+            // {
+            // System.Console.WriteLine($"{emp.Id,-5}{emp.FirstName,-10}{emp.LastName}");
+            // }else
+            // {
+            // System.Console.WriteLine($"This element is dos'nt exist within the collection");
+            // }
+
+            ////  First, FirstOrDefault
+            // List<int> integerList1 = [3, 4,6, 23, 21, 56];
+            // int result1 = integerList1.First(e => e % 2 == 0);
+            // System.Console.WriteLine(result1);
+
+            // List<int> integerList2 = [3, 57, 23, 21, 51];
+            // int result2 = integerList2.FirstOrDefault(e => e % 2 == 0);
+            // if (result2 != 0)
+            // {
+            //     System.Console.WriteLine(result2);
+            // }
+            // else
+            // {
+            //     System.Console.WriteLine("No even number was found in this list");
+
+            // }
+
+
+            ////   Last, LastOrDefault
+            // List<int> integerList1 = [3, 4,6, 23, 21, 56];
+            // int result1 = integerList1.Last(e => e % 2 == 0);
+            // System.Console.WriteLine(result1);
+
+            // List<int> integerList2 = [3, 57, 23, 21, 51];
+            // int result2 = integerList2.LastOrDefault(e => e % 2 == 0);
+            // if (result2 != 0)
+            // {
+            //     System.Console.WriteLine(result2);
+            // }
+            // else
+            // {
+            //     System.Console.WriteLine("No even number was found in this list");
+            // }
+
+            ////   Single, SingleOrDefault
+            /// thi will return an exception if employeeList has one element
+            // var emp = employeeList.Single();
+            // var emp = employeeList.Single(e=>e.Id==2);
+
+            /// thi will return an null if employeeList has one element
+            var emp = employeeList.SingleOrDefault(e=>e.Id==10);
+            if (emp!=null)
             {
-                System.Console.WriteLine(e.FirstName);
+            System.Console.WriteLine($"{emp.Id,-5}{emp.FirstName,-10}{emp.LastName}");
+            }else
+            {
+            System.Console.WriteLine($"this employee is not in the list");
             }
-            
             
     }
 
