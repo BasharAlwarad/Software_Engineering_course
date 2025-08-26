@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\bin\Debug\net9.0\15_switch.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\bin\Debug\net9.0\15_switch.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\bin\Debug\net9.0\15_switch.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\bin\Debug\net9.0\15_switch.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\bin\Debug\net9.0\15_switch.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\refint\15_switch.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\15_switch.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\15_switch\obj\Debug\net9.0\ref\15_switch.dll
