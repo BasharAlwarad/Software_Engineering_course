@@ -25,17 +25,17 @@ Person person = new Person(); // class instance on heap
 
 // Corner cases
 // int overflow
-// int maxInt = 2147483647 + 1; // Uncommenting this will cause overflow
+// int maxInt = 2_147_483_647 + 1; // Uncommenting this will cause overflow
 
 // to avoid the error use checked()
-// try
-// {
-//     int maxInt = checked(2147483647 + 1); // This will throw an OverflowException
-// }
-// catch (OverflowException)
-// {
-//     Console.WriteLine("Overflow occurred!");
-// }
+try
+{
+    int maxInt = checked(2147483647 + 1); // This will throw an OverflowException
+}
+catch (OverflowException)
+{
+    Console.WriteLine("Overflow occurred!");
+}
 
 // float/double precision loss
 // use specialized libraries such as System.Numerics.BigInteger
