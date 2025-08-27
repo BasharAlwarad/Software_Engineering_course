@@ -36,5 +36,3 @@ class Person
 ```
 
 ---
-
-For more, see [w3schools C# Access Modifiers](https://www.w3schools.com/cs/cs_access_modifiers.php).

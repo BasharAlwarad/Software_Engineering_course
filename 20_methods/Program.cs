@@ -1,5 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// // See https://aka.ms/new-console-template for more information
 using System;
+// See https://aka.ms/new-console-template for more information
+// using System;
+
+
+// string Greet(string name)
+//         {
+//             return $"Hello, {name}!";
+//         }
+
+// string x = Greet("John");
+
+// System.Console.WriteLine(x);
 
 // Methods inside a namespace and class
 namespace MyApp
@@ -37,3 +49,4 @@ namespace MyApp
         }
     }
 }
+

@@ -11,19 +11,21 @@ PrintValue(10);
 // Reference parameter (ref)
 void Increment(ref int x)
 {
-    x++;
+    ++x;
 }
 int n = 1;
 Increment(ref n);
 Console.WriteLine($"After Increment: {n}");
 
-// Out parameter
+
+// // Out parameter
 void GetValues(out int x, out int y)
 {
     x = 10;
     y = 20;
 }
-int a, b;
+int a;
+int b;
 GetValues(out a, out b);
 Console.WriteLine($"a = {a}, b = {b}");
 
@@ -49,6 +51,7 @@ void DisplayInfo(string name, int age = 18, string city = "Unknown")
 {
     Console.WriteLine($"Name: {name}, Age: {age}, City: {city}");
 }
+DisplayInfo(name:"Alice", city: "Paris",age:15); // Skips age, uses default
 DisplayInfo("Alice", city: "Paris"); // Skips age, uses default
 
 // Params keyword
@@ -57,7 +60,7 @@ void PrintNumbers(params int[] numbers)
     foreach (int num in numbers)
         Console.WriteLine($"params: {num}");
 }
-PrintNumbers(1, 2, 3, 4);
+PrintNumbers(1, 2, 3, 4,5,6,7);
 
 // Parameter modifier rules
 void RefOutInExamples(ref int a, out int b, in int c)

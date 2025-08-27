@@ -48,5 +48,3 @@ class Book
 - To encapsulate data
 
 ---
-
-For more, see [w3schools C# Properties](https://www.w3schools.com/cs/cs_properties.php).

@@ -38,5 +38,3 @@ myDog.Speak(); // Output: Woof!
 ```
 
 ---
-
-For more, see [w3schools C# OOP](https://www.w3schools.com/cs/cs_oop.php).

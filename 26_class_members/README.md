@@ -44,5 +44,3 @@ myBook.PrintTitle(); // Output: Title: C# in Depth
 ```
 
 ---
-
-For more, see [w3schools C# Class Members](https://www.w3schools.com/cs/cs_class_members.php).

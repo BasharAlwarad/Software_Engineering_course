@@ -44,5 +44,3 @@ car2.Honk();
 - To enable code reuse and encapsulation
 
 ---
-
-For more, see [w3schools C# Classes and Objects](https://www.w3schools.com/cs/cs_classes_objects.php).

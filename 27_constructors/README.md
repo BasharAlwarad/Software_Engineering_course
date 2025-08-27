@@ -58,5 +58,3 @@ Car car2 = new Car("Toyota", 2020);
 ```
 
 ---
-
-For more, see [w3schools C# Constructors](https://www.w3schools.com/cs/cs_constructors.php).
