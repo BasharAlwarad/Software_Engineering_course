@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\bin\Debug\net9.0\21_method_parameters.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\bin\Debug\net9.0\21_method_parameters.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\bin\Debug\net9.0\21_method_parameters.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\bin\Debug\net9.0\21_method_parameters.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\bin\Debug\net9.0\21_method_parameters.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\refint\21_method_parameters.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\21_method_parameters.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\21_method_parameters\obj\Debug\net9.0\ref\21_method_parameters.dll
