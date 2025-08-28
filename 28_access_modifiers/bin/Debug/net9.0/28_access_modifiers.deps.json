@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "28_access_modifiers/1.0.0": {
+        "runtime": {
+          "28_access_modifiers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "28_access_modifiers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

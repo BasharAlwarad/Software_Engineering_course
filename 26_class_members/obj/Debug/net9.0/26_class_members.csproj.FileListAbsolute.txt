@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\bin\Debug\net9.0\26_class_members.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\bin\Debug\net9.0\26_class_members.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\bin\Debug\net9.0\26_class_members.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\bin\Debug\net9.0\26_class_members.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\bin\Debug\net9.0\26_class_members.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\refint\26_class_members.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\26_class_members.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\26_class_members\obj\Debug\net9.0\ref\26_class_members.dll

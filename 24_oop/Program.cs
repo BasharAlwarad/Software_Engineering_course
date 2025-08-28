@@ -1,6 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
+// Main program
+class Program
+{
+    static void Main()
+    {
+        Animal myDog = new Dog { Name = "Buddy" };
+        myDog.Speak(); // Output: Woof!
+    }
+}
+
 // Base class demonstrating encapsulation and abstraction
 class Animal
 {
@@ -20,12 +30,3 @@ class Dog : Animal
     }
 }
 
-// Main program
-class Program
-{
-    static void Main()
-    {
-        Animal myDog = new Dog { Name = "Buddy" };
-        myDog.Speak(); // Output: Woof!
-    }
-}

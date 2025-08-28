@@ -1,38 +1,116 @@
 # 28_access_modifiers
 
-## Access Modifiers in C#
-
-Access modifiers control the visibility and accessibility of classes, methods, and members. They help enforce encapsulation and protect data.
-
-### Types of Access Modifiers
-
-- **public**: Accessible from anywhere.
-- **private**: Accessible only within the same class.
-- **protected**: Accessible within the same class and by derived classes.
-- **internal**: Accessible within the same assembly (project).
-- **protected internal**: Accessible within the same assembly or by derived classes.
-- **private protected**: Accessible within the same class or derived classes in the same assembly.
-
-### Example
+## Full Example
 
 ```csharp
 class Person
 {
-    public string Name; // Accessible everywhere
-    private int age;    // Accessible only in Person
-    protected string Address; // Accessible in Person and subclasses
-    internal string Email;    // Accessible in the same assembly
+    public string Name; // Anyone can access
+    private int age;    // Only Person can access
+    protected string Address; // Person and subclasses
+    internal string Email;    // Same project
+    protected internal string Phone; // Same project or subclasses
+    private protected string Secret; // Same class or subclasses in same project
 
-    public void SetAge(int a)
-    {
-        age = a;
-    }
-
-    public int GetAge()
-    {
-        return age;
-    }
+    public void SetAge(int a) { age = a; }
+    public int GetAge() { return age; }
 }
+
+class Student : Person
+{
+    public void SetAddress(string addr) { Address = addr; } // Allowed
+}
+
+// Usage
+Person p = new Person();
+p.Name = "Alice";
+p.SetAge(30);
+p.Email = "alice@example.com";
+p.Phone = "123-4567";
+// p.Address, p.Secret are not accessible here
 ```
+
+## Access Modifiers in C#
+
+Access modifiers control the visibility and accessibility of classes, methods, and members. They help enforce encapsulation and protect data.
+
+### Types of Access Modifiers (with Explanations and Examples)
+
+#### public
+
+- **What:** Accessible from anywhere in your code and from other assemblies.
+- **When to use:** When you want a member to be available to all other code, such as APIs or libraries.
+- **Why:** Enables sharing and reusing code across projects.
+
+```csharp
+public string Name;
+// Example: Anyone can access or modify Name
+```
+
+#### private
+
+- **What:** Accessible only within the same class.
+- **When to use:** When you want to hide implementation details and protect data from outside changes.
+- **Why:** Supports encapsulation and prevents accidental misuse.
+
+```csharp
+private int age;
+// Example: Only methods inside the class can access age
+```
+
+#### protected
+
+- **What:** Accessible within the same class and by derived (child) classes.
+- **When to use:** When you want to allow subclasses to use or modify a member, but not outside code.
+- **Why:** Supports inheritance and code reuse while keeping data hidden from unrelated code.
+
+```csharp
+protected string Address;
+// Example: Only Person and classes that inherit from Person can access Address
+```
+
+#### internal
+
+- **What:** Accessible anywhere in the same assembly (project), but not from other assemblies.
+- **When to use:** When you want to share code within a project but hide it from outside consumers.
+- **Why:** Helps organize code and control visibility in larger solutions.
+
+```csharp
+internal string Email;
+// Example: Any code in the same project can access Email
+```
+
+#### protected internal
+
+- **What:** Accessible within the same assembly or by derived classes in other assemblies.
+- **When to use:** When you want to allow access for subclasses and for code in the same project.
+- **Why:** Provides flexible access for inheritance and internal collaboration.
+
+```csharp
+protected internal string Phone;
+// Example: Accessible in the same project or by subclasses elsewhere
+```
+
+#### private protected
+
+- **What:** Accessible within the same class or derived classes, but only if they are in the same assembly.
+- **When to use:** When you want to restrict access to subclasses within the same project only.
+- **Why:** Offers fine-grained control for advanced encapsulation scenarios.
+
+```csharp
+private protected string Secret;
+// Example: Only Person and its subclasses in the same project can access Secret
+```
+
+---
+
+## Why Access Modifiers?
+
+Access modifiers were created to support encapsulation, a core principle of object-oriented programming. They help you:
+
+- Hide implementation details
+- Protect data from accidental or malicious changes
+- Expose only what is necessary for other code to use
+- Organize and maintain large codebases
 
 ---

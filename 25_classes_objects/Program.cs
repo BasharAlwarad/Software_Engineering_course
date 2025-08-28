@@ -1,18 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-// Declaring a class
-class Car
-{
-    public string Brand;
-    public int Year;
-
-    public void Honk()
-    {
-        Console.WriteLine($"{Brand} goes beep!");
-    }
-}
-
 // Main program
 class Program
 {
@@ -31,3 +19,17 @@ class Program
         car2.Honk();
     }
 }
+
+
+// Declaring a class
+class Car
+{
+    public string Brand;
+    public int Year;
+
+    public void Honk()
+    {
+        Console.WriteLine($"{Brand} goes beep!");
+    }
+}
+

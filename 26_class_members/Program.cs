@@ -1,17 +1,69 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-// Class with different members
-class Book
+
+// Main program
+class Program
+{
+    static void Main()
+    {
+        // Field vs. Property
+        Person p = new Person();
+        p.Age = 25;
+        Console.WriteLine($"Person age (property): {p.Age}");
+
+        // Method example
+        Calculator calc = new Calculator();
+        Console.WriteLine($"Add method: {calc.Add(2, 3)}");
+
+        // Constructor example
+        Book myBook = new Book("C# in Depth");
+        myBook.PrintTitle();
+
+        // Event example
+        Alarm alarm = new Alarm();
+        alarm.OnRing += () => Console.WriteLine("Wake up!");
+        alarm.Ring();
+
+        // Class with all members
+        Lamp lamp = new Lamp(false);
+        lamp.OnSwitch += () => Console.WriteLine($"Lamp is now {(lamp.IsOn ? "On" : "Off")}");
+        lamp.Switch();
+    }
+}
+
+// Example: Field vs. Property
+class Person
 {
     // Field
-    private string title;
+    private int age;
 
     // Property
-    public string Title
+    public int Age
     {
-        get { return title; }
-        set { title = value; }
+        get { return age; }
+        set { if (value >= 0) age = value; }
+    }
+}
+
+// Example: Method (all functions in C# are methods)
+class Calculator
+{
+    public int Add(int a, int b) // Method
+    {
+        return a + b;
+    }
+}
+
+// Example: Constructor
+class Book
+{
+    public string Title;
+
+    // Constructor
+    public Book(string title)
+    {
+        Title = title;
     }
 
     // Method
@@ -21,13 +73,35 @@ class Book
     }
 }
 
-// Main program
-class Program
+// Example: Event
+class Alarm
 {
-    static void Main()
+    public event Action OnRing;
+
+    public void Ring()
     {
-        Book myBook = new Book();
-        myBook.Title = "C# in Depth";
-        myBook.PrintTitle();
+        Console.WriteLine("Alarm ringing!");
+        OnRing?.Invoke();
+    }
+}
+
+// Example: Class with all members
+class Lamp
+{
+    private bool isOn;
+    public bool IsOn
+    {
+        get { return isOn; }
+        set { isOn = value; }
+    }
+    public event Action OnSwitch;
+    public Lamp(bool initialState)
+    {
+        isOn = initialState;
+    }
+    public void Switch()
+    {
+        isOn = !isOn;
+        OnSwitch?.Invoke();
     }
 }

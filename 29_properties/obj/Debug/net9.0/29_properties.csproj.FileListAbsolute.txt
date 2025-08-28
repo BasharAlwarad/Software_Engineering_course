@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\bin\Debug\net9.0\29_properties.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\bin\Debug\net9.0\29_properties.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\bin\Debug\net9.0\29_properties.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\bin\Debug\net9.0\29_properties.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\bin\Debug\net9.0\29_properties.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\refint\29_properties.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\29_properties.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\29_properties\obj\Debug\net9.0\ref\29_properties.dll

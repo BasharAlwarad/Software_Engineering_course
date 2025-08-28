@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\bin\Debug\net9.0\27_constructors.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\bin\Debug\net9.0\27_constructors.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\bin\Debug\net9.0\27_constructors.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\bin\Debug\net9.0\27_constructors.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\bin\Debug\net9.0\27_constructors.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\refint\27_constructors.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\27_constructors.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\27_constructors\obj\Debug\net9.0\ref\27_constructors.dll
