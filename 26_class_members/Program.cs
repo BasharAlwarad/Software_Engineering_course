@@ -61,6 +61,7 @@ class Book
     public string Title;
 
     // Constructor
+    public Book(){    }
     public Book(string title)
     {
         Title = title;

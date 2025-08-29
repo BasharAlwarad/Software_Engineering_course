@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\bin\Debug\net9.0\30_inheritance.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\bin\Debug\net9.0\30_inheritance.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\bin\Debug\net9.0\30_inheritance.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\bin\Debug\net9.0\30_inheritance.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\bin\Debug\net9.0\30_inheritance.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\refint\30_inheritance.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\30_inheritance.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\30_inheritance\obj\Debug\net9.0\ref\30_inheritance.dll
