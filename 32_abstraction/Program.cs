@@ -10,7 +10,10 @@ abstract class Animal
 
 class Dog : Animal
 {
-    public override void Speak() { Console.WriteLine("Woof!"); }
+    // Property with private setter
+    public string Name { get; private set; }
+    public Dog(string name) { Name = name; }
+    public override void Speak() { Console.WriteLine($"{Name} says Woof!"); }
 }
 
 // Interface example
@@ -29,9 +32,14 @@ class Program
 {
     static void Main()
     {
-        Animal a = new Dog();
-        a.Speak(); // Output: Woof!
+        Animal a = new Dog("Buddy");
+        a.Speak(); // Output: Buddy says Woof!
         a.Eat();   // Output: Eating...
+
+        // Accessing property with private setter
+        Dog d = new Dog("Max");
+        Console.WriteLine(d.Name); // Output: Max
+        // d.Name = "Charlie"; // Error: set is private
 
         IMovable m = new Car();
         m.Move(); // Output: Car is moving
