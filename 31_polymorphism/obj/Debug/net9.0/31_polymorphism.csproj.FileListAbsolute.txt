@@ -1,0 +1,15 @@
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.AssemblyInfoInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.AssemblyInfo.cs
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.csproj.CoreCompileInputs.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.sourcelink.json
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\bin\Debug\net9.0\31_polymorphism.exe
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\bin\Debug\net9.0\31_polymorphism.deps.json
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\bin\Debug\net9.0\31_polymorphism.runtimeconfig.json
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\bin\Debug\net9.0\31_polymorphism.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\bin\Debug\net9.0\31_polymorphism.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\refint\31_polymorphism.dll
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.pdb
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\31_polymorphism.genruntimeconfig.cache
+C:\Users\beelw\Desktop\Software_Engineering_course\31_polymorphism\obj\Debug\net9.0\ref\31_polymorphism.dll
