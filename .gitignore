@@ -2,3 +2,11 @@
 # Ignore build output and temporary files for all projects
 bin/
 obj/
+bin/*
+obj/*
+*/bin/
+*/obj/
+*/bin/*
+*/obj/*
+**/bin/
+**/obj/
