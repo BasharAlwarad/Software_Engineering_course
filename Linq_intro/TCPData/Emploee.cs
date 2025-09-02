@@ -1,6 +1,6 @@
 using System;
-namespace TCPData
-{
+// namespace TCPData
+// {
     public class Employee
     {
         public int Id { get; set; }
@@ -10,4 +10,4 @@ namespace TCPData
         public bool IsManager { get; set; }
         public int DepartmentId { get; set; }
     }
-}
+// }

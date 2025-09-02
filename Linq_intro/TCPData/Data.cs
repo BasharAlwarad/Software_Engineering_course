@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-namespace TCPData
-{
     public static class Data
     {
         public static List<Employee> GetEmployees()
@@ -83,4 +81,3 @@ namespace TCPData
         }
 
     }
-}

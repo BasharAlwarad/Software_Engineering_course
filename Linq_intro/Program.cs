@@ -1,11 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TCPData;
-using TCPExtensions;
 using System.Linq;
-
-namespace ThePretendCompanyApplication
-{
 
     class Program
     {
@@ -107,7 +102,7 @@ namespace ThePretendCompanyApplication
             Console.ReadKey();
         }
     }
-}
+// }
 
 /*
  * LINQ (Language Integrated Query) Summary for this file:
