@@ -41,5 +41,3 @@ foreach (string line in lines)
 ```
 
 ---
-
-For more, see [w3schools C# Files](https://www.w3schools.com/cs/cs_files.php).
