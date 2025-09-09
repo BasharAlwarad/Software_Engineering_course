@@ -1,1 +1,7 @@
-[{"Name":"Alice","Age":30},{"Name":"Bob","Age":40}]
+[
+  { "Name": "Alice", "Age": 30 },
+  { "Name": "John", "Age": 25 },
+  { "Name": "Bob", "Age": 40 },
+  { "Name": "Bob", "Age": 40 },
+  { "Name": "Bob", "Age": 40 }
+]

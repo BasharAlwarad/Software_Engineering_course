@@ -59,4 +59,33 @@ throw new Exception("Something went wrong!");
 
 ---
 
-For more, see [w3schools C# Exceptions](https://www.w3schools.com/cs/cs_exceptions.php).
+## Custom Exceptions vs. Built-in Exceptions
+
+### Built-in Exceptions
+
+- Provided by the .NET framework (e.g., `NullReferenceException`, `DivideByZeroException`).
+- Used for common error scenarios.
+- Help identify specific problems in code.
+
+### Custom Exceptions
+
+- Defined by the developer for application-specific error cases.
+- Inherit from `System.Exception` or another exception type.
+- Allow you to provide more meaningful error messages and context for your application.
+
+#### Example: Custom Exception
+
+```csharp
+public class BankAccountException : Exception
+{
+    public BankAccountException(string message) : base(message) { }
+}
+```
+
+#### When to Use Custom Exceptions
+
+- When built-in exceptions do not accurately describe the error.
+- To provide more details or context for errors in your own classes or business logic.
+- To distinguish your application's errors from system errors.
+
+---

@@ -1,43 +1,45 @@
 # 35_files
 
-## Working with Files in C#
+## Files as a Simple Database
 
-C# provides classes in the `System.IO` namespace to work with files and directories. You can read, write, create, and delete files easily.
+In many applications, files are used to store data just like a database. Each file type (TXT, CSV, JSON) can represent structured or unstructured data, and can be used in a three-tier architecture:
 
-### Common Classes
+**Three-Tier Architecture:**
 
-- `File` and `FileInfo`: For file operations
-- `StreamReader` and `StreamWriter`: For reading and writing text files
-- `Directory` and `DirectoryInfo`: For directory operations
+- **Presentation Layer:** User interface (e.g., Console, Web, Desktop)
+- **Business Logic Layer:** Code that processes data (CRUD functions)
+- **Data Layer:** Files (TXT, CSV, JSON) act as the data source
 
-### Writing to a File
+---
 
-```csharp
-using System.IO;
-File.WriteAllText("example.txt", "Hello, file!");
+## TXT, CSV, and JSON: Differences & Usage
+
+| Format | Structure                   | Use Case                    | Pros                                   | Cons                          |
+| ------ | --------------------------- | --------------------------- | -------------------------------------- | ----------------------------- |
+| TXT    | Unstructured                | Simple notes, logs          | Easy to use                            | No structure, hard to parse   |
+| CSV    | Tabular (rows/columns)      | Tables, spreadsheets        | Human-readable, easy for data exchange | No nested data, limited types |
+| JSON   | Structured (objects/arrays) | Complex data, configs, APIs | Supports nested data, widely used      | Larger size, needs parsing    |
+
+- **TXT**: Best for plain text, logs, or simple messages.
+- **CSV**: Best for tabular data (like Excel), easy to import/export.
+- **JSON**: Best for structured, hierarchical data (objects, lists), common in web APIs.
+
+---
+
+## How Memory is Handled: File → RAM → Screen
+
+```mermaid
+graph TD;
+    A[File on Disk] -->|Read| B[RAM Memory]
+    B -->|Process| C[Business Logic]
+    C -->|Output| D[Screen]
+    D -->|User Input| C
+    C -->|Write| A
 ```
 
-### Reading from a File
-
-```csharp
-string content = File.ReadAllText("example.txt");
-Console.WriteLine(content);
-```
-
-### Appending to a File
-
-```csharp
-File.AppendAllText("example.txt", "\nAppended line.");
-```
-
-### Reading Lines
-
-```csharp
-string[] lines = File.ReadAllLines("example.txt");
-foreach (string line in lines)
-{
-    Console.WriteLine(line);
-}
-```
+- Data is loaded from the file into RAM.
+- Business logic processes the data in memory.
+- Results are displayed on the screen.
+- User actions can update the data, which is then written back to the file.
 
 ---
