@@ -2,6 +2,10 @@
 {
     public static void Main(string[] args)
     {
+        // Memory handling
+        // "Value types are stored on the stack, reference types on the heap.";
+        // "Use value types for small, simple data. Use reference types for objects and collections.";
+
         Console.WriteLine("--- Section 1: Value vs Reference Types ---");
         // Value type example
         int a = 5;
@@ -15,9 +19,10 @@
         arr2[0] = 99;
         Console.WriteLine($"Reference types: arr1[0]={arr1[0]}, arr2[0]={arr2[0]}"); // both 99
 
+
         // Memory handling
-        // "Value types are stored on the stack, reference types on the heap.";
-        // "Use value types for small, simple data. Use reference types for objects and collections.";
+        // "Enums and structs are value types, stored on the stack.";
+        // "Use enums for named constants, structs for small data objects.";
 
         Console.WriteLine("--- Section 2: Enumerations and Structs ---");
         // Enum example
@@ -31,8 +36,8 @@
         Console.WriteLine($"Structs: p1.X={p1.X}, p2.X={p2.X}"); // p1.X=1, p2.X=10
 
         // Memory handling
-        // "Enums and structs are value types, stored on the stack.";
-        // "Use enums for named constants, structs for small data objects.";
+        // "Records, classes, and interfaces are reference types, stored on the heap.";
+        // "Use records for immutable data, classes for general objects, interfaces for abstraction.";
 
         Console.WriteLine("--- Section 3: Records, Classes, and Interfaces ---");
         // Record example
@@ -50,9 +55,6 @@
         IGreeter greeter = new Student { Name = "Charlie", Age = 22 };
         greeter.Greet();
 
-        // Memory handling
-        // "Records, classes, and interfaces are reference types, stored on the heap.";
-        // "Use records for immutable data, classes for general objects, interfaces for abstraction.";
 
     }
 }
@@ -70,8 +72,9 @@ public record Person(string Name, int Age);
 public class Student : IGreeter {
     public string Name { get; set; }
     public int Age { get; set; }
-    public void Greet() => Console.WriteLine($"Hello, I'm {Name} and I'm {Age} years old.");
+    public void Greet() => Console.WriteLine($"Hello, I'm student {Name} and I'm {Age} years old.");
 }
+
 public interface IGreeter {
     void Greet();
 }
