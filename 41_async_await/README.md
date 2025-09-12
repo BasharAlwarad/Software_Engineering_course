@@ -84,15 +84,21 @@ graph TD;
 
 Blocking operations (e.g., `Thread.Sleep`) prevent your application from doing other work while waiting for a task to finish.
 
-**Example:**
+**Updated Example:**
 
 ```csharp
-A_BlockingProblem.Run(); // Makes coffee, then makes a sandwich (sequential, blocking)
+A_BlockingProblem.Run(); // Makes coffee (3s), then makes a sandwich (2s) sequentially (blocking)
 ```
+
+**What happens?**
+
+- The program starts making coffee (takes 3 seconds, blocking the thread).
+- Only after coffee is ready, it starts making the sandwich (takes 2 seconds, also blocking).
+- Total time: ~5 seconds, and nothing else can happen during this time.
 
 ```mermaid
 graph TD;
-    A[MakeCoffee] -->|blocks| B[MakeSandwich]
+    A["MakeCoffee (3s, blocking)"] -->|blocks| B["MakeSandwich (2s, blocking)"]
     B -->|blocks| C[Finished]
 ```
 
@@ -102,16 +108,23 @@ graph TD;
 
 Async/await lets you run tasks in parallel, so your application remains responsive and efficient.
 
-**Example:**
+**Updated Example:**
 
 ```csharp
-await B_AsyncSolution.Run(); // Makes coffee and sandwich in parallel (non-blocking)
+await B_AsyncSolution.Run(); // Makes coffee (3s) and sandwich (2s) in parallel (non-blocking)
 ```
+
+**What happens?**
+
+- The program starts making coffee (takes 3 seconds, non-blocking).
+- At the same time, it starts making the sandwich (takes 2 seconds, non-blocking).
+- Both tasks run in parallel, so total time is ~3 seconds (the longer task).
+- The main thread is free while waiting for both tasks to complete.
 
 ```mermaid
 graph TD;
-    A[MakeCoffeeAsync] -->|parallel| C[Finished]
-    B[MakeSandwichAsync] -->|parallel| C
+    A["MakeCoffeeAsync (3s)"] -->|parallel| C[Finished]
+    B["MakeSandwichAsync (2s)"] -->|parallel| C
 ```
 
 ---
