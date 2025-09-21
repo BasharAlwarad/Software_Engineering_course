@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSR Example - Home</title>
+    <style>
+      nav {
+        margin-bottom: 20px;
+      }
+      nav a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: #333;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      #users {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </nav>
+    <div id="content"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
