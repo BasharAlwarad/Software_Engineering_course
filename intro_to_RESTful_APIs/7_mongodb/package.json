@@ -1,0 +1,12 @@
+{
+  "name": "7_mongodb",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mongodb": "^5.0.0"
+  }
+}
