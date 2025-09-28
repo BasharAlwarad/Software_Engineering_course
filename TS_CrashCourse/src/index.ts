@@ -473,6 +473,92 @@ let myString: string = '2';
 // let numValue: number = <number>anotherValue;
 // console.log(numValue); // Output: 42
 
+/* Function type*/
+// function mul(x: number, y: number): number {
+//   return x * y;
+// }
+
+// function div(x: number, y: number): number {
+//   return x / y;
+// }
+
+// function applyFunction(
+//   funcs: ((a: number, b: number) => number)[],
+//   values: [number, number][]
+// ): number[] {
+//   // const result:number[]=[]
+//   const results = [] as number[];
+//   for (let i = 0; i < funcs.length; i++) {
+//     const args = values[i];
+
+//     if (typeof funcs[i] === 'function' && args !== undefined) {
+//       const result = funcs[i]!(args[0], args[1]);
+//       results.push(result);
+//     }
+//   }
+//   return results;
+// }
+
+// const x = applyFunction(
+//   [mul, div],
+//   [
+//     [1, 2],
+//     [3, 4],
+//   ]
+// );
+// console.log(x);
+
+/*rest parameter*/
+
+// function sum(str: string, ...numbers: number[]): number[] {
+//   return numbers;
+// }
+// sum('', 1, 2, 3);
+
+/*overloaded functions*/
+// function getItemLength(value1:string|string[],value2:string|string[],) {}
+
+// function getItemLength(value1: string): number;
+// function getItemLength(value1: number): number;
+// function getItemLength(value: unknown): unknown {
+//   if (typeof value === 'string') {
+//     return 'value is a string';
+//   } else if (typeof value === 'number') {
+//     return value;
+//   }
+//   return 0;
+// }
+
+// console.log(getItemLength('1'));
+// console.log(getItemLength(1));
+
+/*Interfaces*/
+interface Person {
+  fullName: string;
+  age: number;
+  height?: number;
+  hello: () => void;
+}
+
+interface Employee extends Person {
+  employeeId: number;
+  role: string;
+}
+
+function getUser(fullName: string, age: number): Employee {
+  return {
+    fullName,
+    age,
+    employeeId: 123,
+    role: 'HR',
+    hello: () => console.log('hello ' + fullName),
+  };
+}
+
+const john = getUser('john', 20);
+john.hello();
+console.log(john.age, john.fullName, john.role);
+
 /* TS Debugging */
 //// Debugging in TypeScript
 // Use console.log to print values to the console
