@@ -50,7 +50,7 @@ while number > 0:
     print(number)
     number -= 1
 
-print("Blast off!")
+print("End!")
 
 # Output:
 # 5
@@ -90,28 +90,32 @@ while counter < 3:
 
 ```mermaid
 graph TD
-    subgraph "Iteration 1: counter = 0"
-        S1["Stack<br/>counter = 0"]
-        H1["Heap<br/>String: 'Counter: 0'"]
-        S1 --> H1
-    end
+  subgraph "Iteration 1: counter = 0"
+    direction TB
+    S1["Stack<br/>counter = 0"]
+    H1["Heap<br/>String: 'Counter: 0'"]
+    S1 --> H1
+  end
 
-    subgraph "Iteration 2: counter = 1"
-        S2["Stack<br/>counter = 1"]
-        H2["Heap<br/>String: 'Counter: 1'"]
-        S2 --> H2
-    end
+  subgraph "Iteration 2: counter = 1"
+    direction TB
+    S2["Stack<br/>counter = 1"]
+    H2["Heap<br/>String: 'Counter: 1'"]
+    S2 --> H2
+  end
 
-    subgraph "Iteration 3: counter = 2"
-        S3["Stack<br/>counter = 2"]
-        H3["Heap<br/>String: 'Counter: 2'"]
-        S3 --> H3
-    end
+  subgraph "Iteration 3: counter = 2"
+    direction TB
+    S3["Stack<br/>counter = 2"]
+    H3["Heap<br/>String: 'Counter: 2'"]
+    S3 --> H3
+  end
 
-    subgraph "End: counter = 3"
-        S4["Stack<br/>counter = 3"]
-        S4 --> E["Condition False<br/>Exit Loop"]
-    end
+  subgraph "End: counter = 3"
+    direction TB
+    S4["Stack<br/>counter = 3"]
+    S4 --> E["Condition False<br/>Exit Loop"]
+  end
 ```
 
 ---
@@ -564,27 +568,6 @@ for i in range(1, 6):
 
 ---
 
-## 🔍 Searching with Nested Loops
-
-```python
-words = ["apple", "banana", "cherry"]
-target_letter = "n"
-
-print("Words containing the letter 'n':")
-for word in words:
-    for letter in word:
-        if letter == target_letter:
-            print(f"{word} contains '{target_letter}'")
-            break  # Stop checking current word
-    else:
-        # Runs if inner loop completes without break
-        continue  # Continue to next word
-
-# Output:
-# Words containing the letter 'n':
-# banana contains 'n'
-```
-
 ### Matrix Traversal
 
 ```python
@@ -710,21 +693,6 @@ print(f"Total: €{total:.2f}")
 # Total: €2.60
 ```
 
-### Example 5: FizzBuzz
-
-```python
-# Classic FizzBuzz problem
-for num in range(1, 21):
-    if num % 3 == 0 and num % 5 == 0:
-        print("FizzBuzz")
-    elif num % 3 == 0:
-        print("Fizz")
-    elif num % 5 == 0:
-        print("Buzz")
-    else:
-        print(num)
-```
-
 ---
 
 ## 🔁 List Comprehensions (Bonus)
@@ -799,61 +767,6 @@ for i in reversed(range(5)):
     print(i)
 
 # Output: 4 3 2 1 0
-```
-
----
-
-## 🔄 Recursion (Advanced)
-
-A function that calls itself to solve a problem.
-
-```python
-def countdown(number):
-    if number <= 0:
-        print("Blast off!")
-    else:
-        print(number)
-        countdown(number - 1)
-
-countdown(5)
-
-# Output:
-# 5
-# 4
-# 3
-# 2
-# 1
-# Blast off!
-```
-
-### Recursion in Memory (Stack)
-
-```mermaid
-graph TD
-    A["countdown(5)<br/>print 5"] --> B["countdown(4)<br/>print 4"]
-    B --> C["countdown(3)<br/>print 3"]
-    C --> D["countdown(2)<br/>print 2"]
-    D --> E["countdown(1)<br/>print 1"]
-    E --> F["countdown(0)<br/>print 'Blast off!'"]
-    F --> G["Return to countdown(1)"]
-    G --> H["Return to countdown(2)"]
-    H --> I["Return to countdown(3)"]
-    I --> J["Return to countdown(4)"]
-    J --> K["Return to countdown(5)"]
-    K --> L["End"]
-```
-
-### Factorial Using Recursion
-
-```python
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-print(factorial(5))  # Output: 120
-# 5 * 4 * 3 * 2 * 1 = 120
 ```
 
 ---
