@@ -92,7 +92,6 @@ When you define a function, Python stores it in memory for later use.
 ```mermaid
 graph TD
     subgraph Stack
-        M["main()"]
         H["hello() call"]
     end
 
@@ -100,9 +99,8 @@ graph TD
         F["Function Object<br/>name: hello<br/>code: print(...)"]
     end
 
-    M --> H
     H --> F
-    F --> R["Return to main()"]
+    F --> R["Return"]
 ```
 
 ---
@@ -146,13 +144,6 @@ add(10, 20)
 
 ## 🎯 Parameters vs Arguments
 
-```mermaid
-graph LR
-    A["def greet(name):<br/>Parameter"] --> B["greet('Alice')<br/>Argument"]
-    B --> C["name = 'Alice'<br/>Inside Function"]
-
-```
-
 | Term          | Definition                      | Example            |
 | ------------- | ------------------------------- | ------------------ |
 | **Parameter** | Variable in function definition | `def greet(name):` |
@@ -194,17 +185,6 @@ create_profile()
 # Name: Bob, Age: 30, City: Berlin
 # Name: Charlie, Age: 0, City: Berlin
 # Name: Unknown, Age: 0, City: Berlin
-```
-
-### Default Values Flow
-
-```mermaid
-flowchart TD
-    A[Call Function] --> B{Argument Provided?}
-    B -->|Yes| C[Use Argument Value]
-    B -->|No| D[Use Default Value]
-    C --> E[Execute Function]
-    D --> E
 ```
 
 ---
@@ -277,6 +257,7 @@ flowchart TD
     H --> I[NameError: Not Defined]
 
     subgraph "Correct Order"
+    direction TB
         A
         B
         C
@@ -286,6 +267,7 @@ flowchart TD
     end
 
     subgraph "Wrong Order"
+    direction TB
         G
         H
         I
@@ -464,20 +446,6 @@ print(check_age(70))  # Senior
 
 ---
 
-## 🎯 Return Flow
-
-```mermaid
-flowchart TD
-    A[Call Function] --> B[Execute Code]
-    B --> C{Return Statement?}
-    C -->|Yes| D[Return Value to Caller]
-    C -->|No| E[Return None]
-    D --> F[Continue After Call]
-    E --> F
-```
-
----
-
 ## 📊 Function Examples
 
 ### Example 1: Calculator
@@ -610,6 +578,33 @@ print(square_lambda(5))  # 25
 # Lambda with multiple parameters
 add = lambda a, b: a + b
 print(add(3, 4))  # 7
+```
+
+---
+
+## 📚 Docstrings
+
+Document your functions with docstrings.
+
+```python
+def calculate_area(radius):
+    """
+    Calculate the area of a circle.
+
+    Parameters:
+        radius (float): The radius of the circle
+
+    Returns:
+        float: The area of the circle
+    """
+    return 3.14159 * radius ** 2
+
+# Access docstring
+print(calculate_area.__doc__)
+
+# Use the function
+area = calculate_area(5)
+print(f"Area: {area}")
 ```
 
 ---
@@ -770,9 +765,6 @@ graph LR
     B --> B1["Positional or Keyword<br/>c, d"]
     C --> C1["Keyword-Only<br/>e, f"]
 
-    style A1 fill:#f99
-    style B1 fill:#9f9
-    style C1 fill:#99f
 ```
 
 ### Comparison Table
@@ -784,127 +776,6 @@ graph LR
 | **Example**            | `func(1, 2, /, ...)` | `func(..., 3, 4, ...)` | `func(..., *, e=5, f=6)` |
 
 ---
-
-### When to Use Each Type
-
-#### Use Positional-Only When:
-
-```python
-# 1. Parameter name might change in future
-def calculate_area(radius, /):
-    # Can rename 'radius' to 'r' without breaking existing code
-    return 3.14159 * radius ** 2
-
-# 2. Parameter name is not meaningful
-def pow(base, exponent, /):
-    # Clearer as: pow(2, 3) than pow(base=2, exponent=3)
-    return base ** exponent
-
-# 3. Preventing name conflicts with **kwargs
-def process(data, /, **kwargs):
-    # Prevents: process(data=x, data=y) conflict
-    print(f"Data: {data}")
-    print(f"Options: {kwargs}")
-```
-
-#### Use Keyword-Only When:
-
-```python
-# 1. Many parameters (improves readability)
-def create_database_connection(*, host, port, username, password, database, timeout=30):
-    # Force: create_database_connection(host="localhost", port=5432, ...)
-    # Instead of: create_database_connection("localhost", 5432, ...) <- confusing!
-    pass
-
-# 2. Boolean flags (clarity)
-def parse_file(filename, *, skip_header=False, ignore_errors=False, verbose=False):
-    # Clear: parse_file("data.csv", skip_header=True, verbose=True)
-    # Confusing: parse_file("data.csv", True, False, True) <- what do these mean?
-    pass
-
-# 3. Optional parameters that shouldn't be confused
-def send_notification(message, *, email=None, sms=None, push=None):
-    # Clear which notification methods are used
-    if email:
-        print(f"Email: {message}")
-    if sms:
-        print(f"SMS: {message}")
-    if push:
-        print(f"Push: {message}")
-```
-
-#### Use Combined When:
-
-```python
-# Perfect for APIs where some args are obvious, others need names
-def plot_graph(x_data, y_data, /, title="Graph", *,
-               color="blue", line_style="-", marker="o", grid=True):
-    """
-    x_data, y_data: Obvious, always needed, positional
-    title: Common, can be positional or keyword
-    color, line_style, etc.: Should be explicit with keywords
-    """
-    print(f"Plotting {title}")
-    print(f"Style: {color} {line_style} {marker}, Grid: {grid}")
-
-# ✅ Clean usage
-plot_graph([1, 2, 3], [4, 5, 6], color="red", grid=False)
-plot_graph([1, 2, 3], [4, 5, 6], "Sales Data", marker="*", color="green")
-```
-
----
-
-### Practical Example: Web Request Function
-
-```python
-def make_request(url, /, method="GET", *,
-                 headers=None, timeout=30, verify_ssl=True, retry=3):
-    """
-    Make an HTTP request with controlled argument passing.
-
-    Args:
-        url: Must be positional (obvious what it is)
-        method: Can be positional or keyword (common, has default)
-        headers: Must be keyword (clarity)
-        timeout: Must be keyword (explicit is better)
-        verify_ssl: Must be keyword (safety - should be explicit)
-        retry: Must be keyword (optional behavior)
-    """
-    print(f"Making {method} request to {url}")
-    print(f"Timeout: {timeout}s, SSL: {verify_ssl}, Retries: {retry}")
-    if headers:
-        print(f"Headers: {headers}")
-
-# ✅ Various valid ways to call
-make_request("https://api.example.com/data")
-make_request("https://api.example.com/users", "POST", headers={"Auth": "token"})
-make_request("https://api.example.com/test", timeout=60, verify_ssl=False)
-
-# ❌ These would error
-# make_request(url="https://api.example.com")  # url must be positional
-# make_request("https://api.example.com", "GET", {"Auth": "token"})  # headers must be keyword
-```
-
----
-
-### Summary: Choosing Parameter Types
-
-```mermaid
-flowchart TD
-    A[Choose Parameter Type] --> B{Can name change?}
-    B -->|Yes| C[Positional-Only /]
-    B -->|No| D{Many parameters?}
-    D -->|Yes| E[Keyword-Only *]
-    D -->|No| F{Boolean/Optional?}
-    F -->|Yes| E
-    F -->|No| G{Obvious meaning?}
-    G -->|Yes| H[Positional or Both]
-    G -->|No| E
-
-    style C fill:#f99
-    style E fill:#99f
-    style H fill:#9f9
-```
 
 **Quick Reference:**
 
@@ -1024,33 +895,6 @@ lose_life()
 # Lives remaining: 2
 # Score: 50
 # Lives remaining: 1
-```
-
----
-
-## 📚 Docstrings
-
-Document your functions with docstrings.
-
-```python
-def calculate_area(radius):
-    """
-    Calculate the area of a circle.
-
-    Parameters:
-        radius (float): The radius of the circle
-
-    Returns:
-        float: The area of the circle
-    """
-    return 3.14159 * radius ** 2
-
-# Access docstring
-print(calculate_area.__doc__)
-
-# Use the function
-area = calculate_area(5)
-print(f"Area: {area}")
 ```
 
 ---
