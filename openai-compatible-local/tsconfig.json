@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "lib": ["es2022"],
+    "target": "es2022",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    /* Node Stuff */
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "module": "preserve",
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "./src",
+    /* Paths */
+    "baseUrl": "./src",
+    "paths": {
+      "#*": ["*"]
+    }
+  },
+  "include": ["src"]
+}

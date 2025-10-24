@@ -1,0 +1,46 @@
+{
+  "name": "openai-compatible-local",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "type": "module",
+  "imports": {
+    "#controllers": {
+      "development": "./src/controllers/index.ts",
+      "default": "./dist/controllers/index.js"
+    },
+    "#middlewares": {
+      "development": "./src/middlewares/index.ts",
+      "default": "./dist/middlewares/index.js"
+    },
+    "#routes": {
+      "development": "./src/routes/index.ts",
+      "default": "./dist/routes/index.js"
+    },
+    "#schemas": {
+      "development": "./src/schemas/index.ts",
+      "default": "./dist/schemas/index.js"
+    },
+    "#utils": {
+      "development": "./src/utils/index.ts",
+      "default": "./dist/utils/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "node --watch --conditions development --experimental-transform-types --disable-warning=ExperimentalWarning --env-file=.env.development.local src/app.ts",
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node --env-file=.env.production.local dist/app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.5",
+    "openai": "^5.12.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "typescript": "^5.8.3"
+  }
+}
