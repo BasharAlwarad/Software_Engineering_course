@@ -1,13 +1,11 @@
 // AI completion controllers - handle requests to local/cloud AI models
 import type { RequestHandler } from 'express';
 import type { ChatCompletionCreateParamsNonStreaming } from 'openai/resources';
-import type { z } from 'zod';
+import type { IncomingPrompt } from '#types';
 import { createOpenAICompletion } from '#utils';
-import type { promptBodySchema } from '#schemas';
 import OpenAI from 'openai';
 
 // Type definitions for request/response
-type IncomingPrompt = z.infer<typeof promptBodySchema>;
 type ResponseCompletion = { completion: string };
 
 /**

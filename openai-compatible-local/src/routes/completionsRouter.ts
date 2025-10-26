@@ -1,6 +1,6 @@
 // API routes for AI completion endpoints
 import { Router } from 'express';
-import { createLMSCompletion, createOllamaCompletion } from '#controllers';
+import { createOllamaCompletion, createToolCallingCompletion } from '#controllers';
 import { validateBodyZod } from '#middlewares';
 import { promptBodySchema } from '#schemas';
 
@@ -11,8 +11,13 @@ const completionsRouter = Router();
 // Validates request body before passing to controller
 completionsRouter.post('/ollama', validateBodyZod(promptBodySchema), createOllamaCompletion);
 
-// POST /ai/lms - Send prompts to LM Studio or other OpenAI-compatible provider
-// Supports streaming and non-streaming responses
-completionsRouter.post('/lms', validateBodyZod(promptBodySchema), createLMSCompletion);
+// POST /ai/tool-calling - Demonstrate tool calling with Pokemon API
+// Multi-step flow: intent check → function execution → structured response
+// Requires Ollama with a tool-calling capable model (e.g., llama3.1:8b)
+completionsRouter.post(
+  '/tool-calling',
+  validateBodyZod(promptBodySchema),
+  createToolCallingCompletion
+);
 
 export default completionsRouter;
