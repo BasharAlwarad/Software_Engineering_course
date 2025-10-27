@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "pokemon": {
+      "command": "node",
+      "args": ["C:/Users/beelw/Desktop/Software_Engineering_course/MCP_server/dist/app.js"]
+    }
+  }
+}
