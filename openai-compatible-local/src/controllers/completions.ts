@@ -38,7 +38,7 @@ export const createOllamaCompletion: RequestHandler<
         ? process.env.OLLAMA_MODEL! // Local model name (e.g., qwen2.5:0.5b)
         : process.env.OPENAI_MODEL!, // Cloud model name (e.g., gpt-4)
     messages: [
-      { role: 'developer', content: 'You are a helpful assisstant' }, // System instruction
+      { role: 'developer', content: 'You are a helpful assistant' }, // System instruction
       { role: 'user', content: prompt } // User's question
     ]
   });

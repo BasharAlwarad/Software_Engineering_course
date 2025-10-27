@@ -190,20 +190,14 @@ sequenceDiagram
     actor C as Client
     participant E as Express /ai/tool-calling
     participant L as Local LLM (Ollama)
-    participant T1 as Tool: get_pokemon
-    participant T2 as Tool: return_error
+  participant T as Tool (selected)
 
     C->>E: POST /ai/tool-calling { prompt }
     E->>L: chat.completions.create({ tools, tool_choice: 'required', messages })
-    L-->>E: assistant message with tool_calls
-    alt Calls get_pokemon
-        E->>T1: getPokemon({ pokemonName })
-        T1-->>E: Pokemon JSON (from PokeAPI)
-    else Calls return_error
-        E->>T2: returnError({ message })
-        T2-->>E: { success: false, error }
-    end
-    E->>L: chat.completions.parse({ messages + tool outputs, zodResponseFormat })
+  L-->>E: assistant message with tool_calls (selected tool + args)
+  E->>T: execute selected tool with args
+  T-->>E: tool result (JSON)
+  E->>L: chat.completions.parse({ messages + tool result, zodResponseFormat })
     L-->>E: FinalResponse (validated)
     E-->>C: 200 OK JSON (FinalResponse)
 ```
