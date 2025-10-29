@@ -1,23 +1,20 @@
 // API routes for AI completion endpoints
 import { Router } from 'express';
-import { createOllamaCompletion, createToolCallingCompletion } from '#controllers';
+import { createCustomerSupportCompletion } from '#controllers';
 import { validateBodyZod } from '#middlewares';
 import { promptBodySchema } from '#schemas';
 
 // Initialize router
 const completionsRouter = Router();
 
-// POST /ai/ollama - Send prompts to Ollama (local AI)
-// Validates request body before passing to controller
-completionsRouter.post('/ollama', validateBodyZod(promptBodySchema), createOllamaCompletion);
-
-// POST /ai/tool-calling - Demonstrate tool calling with Pokemon API
-// Multi-step flow: intent check → function execution → structured response
-// Requires Ollama with a tool-calling capable model (e.g., llama3.1:8b)
+// POST /ai/customer-support - Agentic AI customer support flow
+// Demonstrates the Agents SDK with guardrails, handoffs, and specialized agents
+// Multi-agent system: guardrail → orchestrator → specialist agents (support/sales/refunds/escalation)
+// Each agent can call tools and the orchestrator routes based on customer intent
 completionsRouter.post(
-  '/tool-calling',
+  '/customer-support',
   validateBodyZod(promptBodySchema),
-  createToolCallingCompletion
+  createCustomerSupportCompletion
 );
 
 export default completionsRouter;
