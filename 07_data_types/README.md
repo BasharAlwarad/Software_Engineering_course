@@ -51,7 +51,7 @@ Unlike Python and JavaScript, which are dynamically typed and use a few general-
 
 - The compiler checks types at compile time for safety and performance.
 - Each type is optimized for memory and speed (e.g., int vs long, float vs double).
-- You get better error checking and IDE support.
+- You get better error checking and IDE (Integrated Development Environment) support.
 
 ## When to Use Each Type
 

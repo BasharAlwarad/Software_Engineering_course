@@ -1,3 +1,7 @@
+> **Educational content by Bashar Alwarad**: C# .
+
+## Connect with Me [![LinkedIn](https://img.shields.io/badge/LinkedIn-Bashar%20AlWarad-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bashar-alwarad-2a960b1b6/)
+
 # Software Engineering Course - C# Examples
 
 This solution has been reorganized to separate different C# learning topics into individual projects.
