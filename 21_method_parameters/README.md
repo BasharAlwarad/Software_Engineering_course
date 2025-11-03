@@ -9,16 +9,30 @@ Method parameters allow you to pass information into methods, making them flexib
 ```csharp
 void PrintSum(int a, int b)
 {
-    Console.WriteLine($"Sum: {a + b}");
+  Console.WriteLine($"Sum: {a + b}");
 }
+// Caller
 PrintSum(3, 5); // Output: Sum: 8
+```
+
+Below is a simple Mermaid sequence diagram that shows how a caller invokes a method with parameters and how the parameters are bound in the called method's stack frame.
+
+```mermaid
+sequenceDiagram
+  participant Main as Main()
+  participant Method as PrintSum(a, b)
+
+  Main->>Method: call PrintSum(3, 5)
+  Note right of Method: new stack frame created
+  Method-->>Main: returns void
+  Note right of Main: stack frame popped
 ```
 
 ### Parameter Types (with Examples and Explanations)
 
 - **Value parameters**: The default; a copy of the value is passed.
 
-  - _Why/When_: Use when you don't want the method to modify the original variable. Most common for numbers, strings, etc.
+  - Use when you don't want the method to modify the original variable. Most common for numbers, strings, etc.
 
   ```csharp
   void PrintValue(int x) { Console.WriteLine(x); }
@@ -28,7 +42,7 @@ PrintSum(3, 5); // Output: Sum: 8
 
 - **Reference parameters (`ref`)**: Use `ref` to pass a reference to the variable.
 
-  - _Why/When_: Use when you want the method to modify the caller's variable.
+  - Use when you want the method to modify the caller's variable.
 
   ```csharp
   void Increment(ref int x) { x++; }
@@ -41,7 +55,7 @@ PrintSum(3, 5); // Output: Sum: 8
 
 - **Output parameters (`out`)**: Used to return multiple values from a method.
 
-  - _Why/When_: Use when you need to return more than one value from a method.
+  - Use when you need to return more than one value from a method.
 
   ```csharp
   void GetValues(out int x, out int y) { x = 10; y = 20; }
@@ -54,7 +68,7 @@ PrintSum(3, 5); // Output: Sum: 8
 
 - **Optional parameters**: Provide a default value in the method signature.
 
-  - _Why/When_: Use to make parameters optional for the caller, providing a default if not specified.
+  - Use to make parameters optional for the caller, providing a default if not specified.
 
   ```csharp
   double Power(double x, double y = 2) { return Math.Pow(x, y); }
@@ -64,7 +78,7 @@ PrintSum(3, 5); // Output: Sum: 8
 
 - **Named arguments**: Specify parameter names when calling a method for clarity or to skip optional parameters.
 
-  - _Why/When_: Use for readability or to skip some optional parameters.
+  - Use for readability or to skip some optional parameters.
 
   ```csharp
   void DisplayInfo(string name, int age = 18, string city = "Unknown") {
@@ -75,7 +89,7 @@ PrintSum(3, 5); // Output: Sum: 8
 
 - **Params keyword**: Allows passing a variable number of arguments as an array.
 
-  - _Why/When_: Use when you want to allow the caller to pass any number of arguments.
+  - Use when you want to allow the caller to pass any number of arguments.
 
   ```csharp
   void PrintNumbers(params int[] numbers) {
@@ -85,9 +99,21 @@ PrintSum(3, 5); // Output: Sum: 8
   PrintNumbers(1, 2, 3, 4);
   ```
 
+  ### Quick contract (for lesson planning)
+
+  - Inputs: method name, parameter list (types + names), call site arguments
+  - Outputs: method return value (or void), potential mutated variables via ref/out
+  - Error modes: wrong number/types of args, null reference for reference types, uninitialized out variables
+
+  ### Simple classroom talking points
+
+  - Show declaration vs call: signature describes what a method expects; call provides concrete values.
+  - Emphasize intent keywords: ref/out/in — and that they must appear in both declaration and call.
+  - Optional and named arguments change the call site readability but do not alter memory semantics.
+
 - **In parameters**: Use `in` to pass a parameter by reference, but as read-only.
 
-  - _Why/When_: Use for performance (avoid copying large structs) but don't want the method to modify the value.
+  - Use for performance (avoid copying large structs) but don't want the method to modify the value.
 
   ```csharp
   void PrintIn(in int x) { Console.WriteLine(x); /* x = 5; // Error */ }
@@ -96,64 +122,12 @@ PrintSum(3, 5); // Output: Sum: 8
   ```
 
 - **Parameter modifiers order**: `ref`, `out`, and `in` must be specified in both method declaration and call.
-  - _Why/When_: C# requires you to use the same modifier in both the method and the call for clarity and safety.
+  - C# requires you to use the same modifier in both the method and the call for clarity and safety.
   ```csharp
   void Change(ref int x) { x = 99; }
   int v = 5;
   Change(ref v); // Must use 'ref' in both places
   ```
-
-### Examples
-
-```csharp
-// Value parameter
-void PrintValue(int x) { Console.WriteLine(x); }
-PrintValue(10);
-
-// Reference parameter (ref)
-void Increment(ref int x) { x++; }
-int n = 1;
-Increment(ref n); // n is now 2
-
-// Out parameter
-void GetValues(out int x, out int y) { x = 10; y = 20; }
-int a, b;
-GetValues(out a, out b);
-
-// In parameter (read-only reference)
-void PrintIn(in int x) { Console.WriteLine(x); /* x = 5; // Error: cannot assign */ }
-int z = 42;
-PrintIn(z);
-
-// Optional parameter
-double Power(double x, double y = 2) { return Math.Pow(x, y); }
-Power(3); // 9
-Power(3, 3); // 27
-
-// Named arguments
-void DisplayInfo(string name, int age = 18, string city = "Unknown")
-{
-    Console.WriteLine($"Name: {name}, Age: {age}, City: {city}");
-}
-DisplayInfo("Alice", city: "Paris"); // Skips age, uses default
-
-// Params keyword
-void PrintNumbers(params int[] numbers)
-{
-    foreach (int num in numbers)
-        Console.WriteLine(num);
-}
-PrintNumbers(1, 2, 3, 4);
-
-// Example: Simple Function with Two Parameters
-string ReturnIfOne(string text, int number)
-{
-    if (number == 1)
-        return text;
-    return "Not one";
-}
-string result = ReturnIfOne("Hello", 1); // result = "Hello"
-```
 
 ### How Arguments and Parameters Work in Memory (Stack and Heap)
 
@@ -185,13 +159,93 @@ flowchart TD
     S2 -.->|popped after return| S1
 ```
 
-### Step-by-Step Stack Operation
+### Detailed RAM view: Stack (above) and Heap (below)
 
-1. Main method pushes arguments (`"Hello"` reference, `1`) onto the stack and calls `ReturnIfOne`.
-2. New stack frame for `ReturnIfOne` is created with parameters.
-3. Method logic executes using stack values and heap reference.
-4. Return value (reference to string or new string) is passed back to main stack frame.
-5. `ReturnIfOne` stack frame is removed from the stack.
+The diagram below places the Stack visually above the Heap and shows concrete frames, parameters, and heap objects during a call. This is useful for classroom whiteboard translation: you can show the stack growing with each call and the heap remaining stable across calls.
+
+```mermaid
+flowchart TB
+  %% Stack (top) and Heap (bottom)
+  subgraph Stack [Stack (top)]
+    direction TB
+    Main["Main Frame\nlocals:\n  int num = 5\n  Person p -> 0xABC"]
+    Call["Foo Frame\nparams:\n  int x (value) = 5\n  Person pRef -> 0xABC\n  returnAddress"]
+  end
+
+  subgraph Heap [Heap (bottom)]
+    direction TB
+    Obj["0xABC: Person { Name = 'Sam' }"]
+    Str["0x100: 'Hello' (string) "]
+  end
+
+  Main -->|call Foo(num, p)| Call
+  Call -->|pRef ->| Obj
+  Main -.->|holds reference ->| Obj
+  Call -.->|reads/writes object| Obj
+  Call -.->|returns value/reference| Main
+
+  %% visual hints
+  classDef stack fill:#e8f4ff,stroke:#4aa3ff
+  class Main,Call stack
+  classDef heap fill:#fff0d6,stroke:#d99a00
+  class Obj,Str heap
+```
+
+Explanation / reading the diagram:
+
+- Top area labelled `Stack` shows the active frames. `Main Frame` holds local variables and references to heap objects. When `Foo` is called a `Foo Frame` is pushed with parameter copies or references (depending on type/modifier).
+- Bottom area `Heap` contains objects like `Person` or interned strings. Stack frames hold pointers (references) to these heap objects.
+- When `Foo` returns, its stack frame is popped; heap objects remain until no references point to them and the GC collects them.
+
+Use this diagram live in class to annotate: change the numeric addresses (0xABC) or values, draw arrows that show mutation (property changes) versus reassignments (with/without `ref`).
+
+### Expanded memory explanation (value vs reference)
+
+Key points:
+
+- Value types (int, double, structs without reference fields) are copied onto the callee's stack frame. Mutating the parameter inside the method does not affect the caller's variable.
+- Reference types (class instances, strings) cause a reference (pointer) to be passed on the stack; the actual object stays on the heap. Reassigning the parameter variable in the callee does not change the caller's reference, but mutating the object referenced (e.g., modifying a property) will be visible to the caller.
+- `ref` and `out` change semantics by passing the caller's variable itself (an alias) so that reassignments in the callee affect the caller.
+
+### Visual: ref vs value effect (sequence + memory note)
+
+```mermaid
+sequenceDiagram
+  participant Caller as Caller
+  participant Callee as Callee
+
+  Caller->>Callee: Call Foo(x) // value type
+  Note right of Callee: Callee receives copy
+  Caller->>Callee: Call Bar(ref y) // ref param
+  Note right of Callee: Callee can reassign y and Caller sees change
+```
+
+### Small examples and edge-cases to demonstrate in class
+
+- Example 1: Mutating reference type's property inside method
+
+```csharp
+class Person { public string Name; }
+void Rename(Person p) { p.Name = "Bob"; }
+Person a = new Person { Name = "Alice" };
+Rename(a); // a.Name == "Bob"
+```
+
+- Example 2: Reassigning a reference parameter without `ref`
+
+```csharp
+void Reassign(Person p) { p = new Person { Name = "Z" }; }
+Person a = new Person { Name = "A" };
+Reassign(a); // a still refers to original object
+```
+
+- Example 3: Using `ref` to reassign the caller's reference
+
+```csharp
+void ReassignRef(ref Person p) { p = new Person { Name = "New" }; }
+Person a = new Person { Name = "Old" };
+ReassignRef(ref a); // a now refers to new object
+```
 
 ### Notes
 
