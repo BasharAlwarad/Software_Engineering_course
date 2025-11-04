@@ -38,9 +38,9 @@ Access modifiers control the visibility and accessibility of classes, methods, a
 
 #### public
 
-- **What:** Accessible from anywhere in your code and from other assemblies.
-- **When to use:** When you want a member to be available to all other code, such as APIs or libraries.
-- **Why:** Enables sharing and reusing code across projects.
+- Accessible from anywhere in your code and from other assemblies.
+- When you want a member to be available to all other code, such as APIs or libraries.
+- Enables sharing and reusing code across projects.
 
 ```csharp
 public string Name;
@@ -49,9 +49,9 @@ public string Name;
 
 #### private
 
-- **What:** Accessible only within the same class.
-- **When to use:** When you want to hide implementation details and protect data from outside changes.
-- **Why:** Supports encapsulation and prevents accidental misuse.
+- Accessible only within the same class.
+- When you want to hide implementation details and protect data from outside changes.
+- Supports encapsulation and prevents accidental misuse.
 
 ```csharp
 private int age;
@@ -60,9 +60,9 @@ private int age;
 
 #### protected
 
-- **What:** Accessible within the same class and by derived (child) classes.
-- **When to use:** When you want to allow subclasses to use or modify a member, but not outside code.
-- **Why:** Supports inheritance and code reuse while keeping data hidden from unrelated code.
+- Accessible within the same class and by derived (child) classes.
+- When you want to allow subclasses to use or modify a member, but not outside code.
+- Supports inheritance and code reuse while keeping data hidden from unrelated code.
 
 ```csharp
 protected string Address;
@@ -71,9 +71,9 @@ protected string Address;
 
 #### internal
 
-- **What:** Accessible anywhere in the same assembly (project), but not from other assemblies.
-- **When to use:** When you want to share code within a project but hide it from outside consumers.
-- **Why:** Helps organize code and control visibility in larger solutions.
+- Accessible anywhere in the same assembly (project), but not from other assemblies.
+- When you want to share code within a project but hide it from outside consumers.
+- Helps organize code and control visibility in larger solutions.
 
 ```csharp
 internal string Email;
@@ -82,9 +82,9 @@ internal string Email;
 
 #### protected internal
 
-- **What:** Accessible within the same assembly or by derived classes in other assemblies.
-- **When to use:** When you want to allow access for subclasses and for code in the same project.
-- **Why:** Provides flexible access for inheritance and internal collaboration.
+- Accessible within the same assembly or by derived classes in other assemblies.
+- When you want to allow access for subclasses and for code in the same project.
+- Provides flexible access for inheritance and internal collaboration.
 
 ```csharp
 protected internal string Phone;
@@ -93,9 +93,9 @@ protected internal string Phone;
 
 #### private protected
 
-- **What:** Accessible within the same class or derived classes, but only if they are in the same assembly.
-- **When to use:** When you want to restrict access to subclasses within the same project only.
-- **Why:** Offers fine-grained control for advanced encapsulation scenarios.
+- Accessible within the same class or derived classes, but only if they are in the same assembly.
+- When you want to restrict access to subclasses within the same project only.
+- Offers fine-grained control for advanced encapsulation scenarios.
 
 ```csharp
 private protected string Secret;

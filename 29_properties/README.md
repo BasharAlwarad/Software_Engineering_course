@@ -73,7 +73,7 @@ class Person
 }
 ```
 
-- **Why:** Use when you need to add logic or validation in get/set.
+- Use when you need to add logic or validation in get/set.
 
 #### 2. Auto-Implemented Property
 
@@ -85,7 +85,7 @@ class Car
 }
 ```
 
-- **Why:** Use for simple storage when no extra logic is needed.
+- Use for simple storage when no extra logic is needed.
 
 #### 3. Read-Only Property
 
@@ -100,7 +100,7 @@ class Book
 }
 ```
 
-- **Why:** Use when you want to set a value only at construction and prevent changes later.
+- Use when you want to set a value only at construction and prevent changes later.
 
 #### 4. Write-Only Property
 
@@ -115,7 +115,7 @@ class Secret
 }
 ```
 
-- **Why:** Use when you want to allow setting a value but not reading it (rare).
+- Use when you want to allow setting a value but not reading it (rare).
 
 ---
 
