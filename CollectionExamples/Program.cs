@@ -9,7 +9,8 @@ namespace CollectionExamples
             Console.WriteLine("=== Collection Examples Demo ===");
             Console.WriteLine("Choose an example to run:");
             Console.WriteLine("1. Array Examples");
-            Console.WriteLine("2. Dictionary Examples");
+            Console.WriteLine("2. List Examples");
+            Console.WriteLine("3. Dictionary Examples");
             Console.WriteLine("0. Run All Examples");
             
             Console.Write("\nEnter your choice: ");
@@ -18,18 +19,24 @@ namespace CollectionExamples
             switch (choice)
             {
                 case "1":
-                    CollectionExamplesDemo.ArrayExamples();
+                    ArrayExample.Run();
                     break;
                 case "2":
-                    CollectionExamplesDemo.DictionaryExamples();
+                    ListExample.Run();
+                    break;
+                case "3":
+                    DictionaryExample.Run();
                     break;
                 case "0":
-                    CollectionExamplesDemo.ArrayExamples();
-                    CollectionExamplesDemo.DictionaryExamples();
+                    ArrayExample.Run();
+                    ListExample.Run();
+                    DictionaryExample.Run();
                     break;
                 default:
-                    Console.WriteLine("Invalid choice. Running Array Examples by default.");
-                    CollectionExamplesDemo.ArrayExamples();
+                    Console.WriteLine("Invalid choice. Running all examples by default.");
+                    ArrayExample.Run();
+                    ListExample.Run();
+                    DictionaryExample.Run();
                     break;
             }
         }

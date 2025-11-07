@@ -73,8 +73,8 @@ classDiagram
 
 ### Method Overriding (Run-time Polymorphism)
 
-- **When:** Use when you want derived classes to provide a specific implementation of a method defined in a base class.
-- **Why:** Enables dynamic behavior based on the actual object type at runtime. Essential for flexible, extensible code.
+- Use when you want derived classes to provide a specific implementation of a method defined in a base class.
+- Enables dynamic behavior based on the actual object type at runtime. Essential for flexible, extensible code.
 - **How:** Use `virtual` in the base class and `override` in derived classes.
 
 ```csharp
@@ -90,8 +90,8 @@ a.Speak(); // Output: Bird says tweet
 
 ### Method Hiding (new keyword)
 
-- **When:** Use when you want to define a new method in a derived class with the same name as in the base class, but do not want to override the base method.
-- **Why:** Useful when you want to change the behavior for the derived class, but still allow the base class method to exist and be called via a base reference.
+- Use when you want to define a new method in a derived class with the same name as in the base class, but do not want to override the base method.
+- Useful when you want to change the behavior for the derived class, but still allow the base class method to exist and be called via a base reference.
 - **How:** Use `new` in the derived class to hide a base class method.
 
 ```csharp
@@ -108,8 +108,8 @@ la.Speak(); // Output: Land animal makes a sound
 
 ### Method Overloading (Compile-time Polymorphism)
 
-- **When:** Use when you want multiple methods with the same name but different parameters in the same class.
-- **Why:** Improves code readability and usability by allowing the same method name for similar actions with different data.
+- Use when you want multiple methods with the same name but different parameters in the same class.
+- Improves code readability and usability by allowing the same method name for similar actions with different data.
 - **How:** Define multiple methods with the same name but different parameter lists.
 
 ```csharp
@@ -124,8 +124,8 @@ a.Eat("plants"); // Output: Animal eats plants
 
 ### Operator Overloading
 
-- **When:** Use when you want to define how operators (+, -, etc.) work for your own classes.
-- **Why:** Makes custom types easier and more natural to use, especially for mathematical or collection-like classes.
+- Use when you want to define how operators (+, -, etc.) work for your own classes.
+- Makes custom types easier and more natural to use, especially for mathematical or collection-like classes.
 - **How:** Use the `operator` keyword in your class.
 
 ```csharp
@@ -143,8 +143,8 @@ var l3 = l1 + l2; // Output: Larry and Lizzy the Lizards meet!
 
 ### Sealed Classes and Methods
 
-- **When:** Use when you want to prevent further inheritance or overriding.
-- **Why:** Ensures the class or method cannot be changed by further derived classes, which can improve security and performance.
+- Use when you want to prevent further inheritance or overriding.
+- Ensures the class or method cannot be changed by further derived classes, which can improve security and performance.
 - **How:** Use the `sealed` keyword.
 
 ```csharp
@@ -157,8 +157,8 @@ sealed class Bird : LandAnimal {
 
 ### Static Methods
 
-- **When:** Use when a method should belong to the class itself, not to any instance.
-- **Why:** Useful for utility or helper methods, or to represent behavior common to all instances.
+- Use when a method should belong to the class itself, not to any instance.
+- Useful for utility or helper methods, or to represent behavior common to all instances.
 - **How:** Use the `static` keyword.
 
 ```csharp
@@ -173,21 +173,21 @@ Animal.Info(); // Output: All animals can move and make sounds.
 ## Overriding vs. Hiding
 
 - **Overriding**
-  - **When:** When you want derived classes to provide a specific implementation of a base class method.
-  - **Why:** Enables dynamic, run-time behavior based on the actual object type.
+  - When you want derived classes to provide a specific implementation of a base class method.
+  - Enables dynamic, run-time behavior based on the actual object type.
 - **Hiding**
-  - **When:** When you want to define a new method in a derived class with the same name as in the base class, but not override it.
-  - **Why:** Useful for changing behavior in the derived class while still allowing the base method to exist.
+  - When you want to define a new method in a derived class with the same name as in the base class, but not override it.
+  - Useful for changing behavior in the derived class while still allowing the base method to exist.
 
 ## Method Overloading
 
-- **When:** When you want to provide multiple ways to call a method with different parameters.
-- **Why:** Improves usability and flexibility.
+- When you want to provide multiple ways to call a method with different parameters.
+- Improves usability and flexibility.
 
 ## Operator Overloading
 
-- **When:** When you want to make your class work naturally with operators.
-- **Why:** Makes custom types easier to use and more expressive.
+- When you want to make your class work naturally with operators.
+- Makes custom types easier to use and more expressive.
 
 ## Compile-time vs. Run-time Polymorphism
 
