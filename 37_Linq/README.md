@@ -63,12 +63,55 @@ var departments = new List<Dictionary<string, object>>
 var highEarners = employees.Where(e => (decimal)e["AnnualSalary"] > 50000);
 ```
 
+Serialized JSON (example):
+
+```json
+[
+  {
+    "Id": 2,
+    "FirstName": "Sarah",
+    "LastName": "Jameson",
+    "AnnualSalary": 80000.1,
+    "IsManager": true,
+    "DepartmentId": 2
+  },
+  {
+    "Id": 1,
+    "FirstName": "Bob",
+    "LastName": "Jones",
+    "AnnualSalary": 60000.3,
+    "IsManager": true,
+    "DepartmentId": 1
+  },
+  {
+    "Id": 5,
+    "FirstName": "Kostantin",
+    "LastName": "Spenst",
+    "AnnualSalary": 300000.2,
+    "IsManager": false,
+    "DepartmentId": 3
+  }
+]
+```
+
 #### Selecting (Select)
 
 // Projects each employee to their full name as a string.
 
 ```csharp
 var names = employees.Select(e => $"{e["FirstName"]} {e["LastName"]}");
+```
+
+Serialized JSON (example):
+
+```json
+[
+  "Bob Jones",
+  "Sarah Jameson",
+  "Douglas Roberts",
+  "Jane Stevens",
+  "Kostantin Spenst"
+]
 ```
 
 #### Ordering (OrderBy, ThenBy)
@@ -79,12 +122,47 @@ var names = employees.Select(e => $"{e["FirstName"]} {e["LastName"]}");
 var ordered = employees.OrderBy(e => e["LastName"]).ThenBy(e => e["FirstName"]);
 ```
 
+Serialized JSON (example):
+
+```json
+[
+  { "LastName": "Jameson", "FirstName": "Sarah" },
+  { "LastName": "Jones", "FirstName": "Bob" },
+  { "LastName": "Roberts", "FirstName": "Douglas" },
+  { "LastName": "Stevens", "FirstName": "Jane" },
+  { "LastName": "Spenst", "FirstName": "Kostantin" }
+]
+```
+
 #### ToList()
 
 // Converts the filtered result to a List for immediate use and further manipulation.
 
 ```csharp
 var employeeList = employees.Where(e => (bool)e["IsManager"]).ToList();
+```
+
+Serialized JSON (example):
+
+```json
+[
+  {
+    "Id": 1,
+    "FirstName": "Bob",
+    "LastName": "Jones",
+    "AnnualSalary": 60000.3,
+    "IsManager": true,
+    "DepartmentId": 1
+  },
+  {
+    "Id": 2,
+    "FirstName": "Sarah",
+    "LastName": "Jameson",
+    "AnnualSalary": 80000.1,
+    "IsManager": true,
+    "DepartmentId": 2
+  }
+]
 ```
 
 #### Chaining Operations
@@ -98,6 +176,12 @@ var result = employees
     .Select(e => e["FirstName"]);
 ```
 
+Serialized JSON (example):
+
+```json
+["Sarah", "Bob", "Kostantin"]
+```
+
 #### SelectMany
 
 // Flattens all first names into a single sequence of characters.
@@ -106,12 +190,53 @@ var result = employees
 var allChars = employees.SelectMany(e => ((string)e["FirstName"]).ToCharArray());
 ```
 
+Serialized JSON (example):
+
+```json
+[
+  "B",
+  "o",
+  "b",
+  "S",
+  "a",
+  "r",
+  "a",
+  "h",
+  "D",
+  "o",
+  "u",
+  "g",
+  "l",
+  "a",
+  "s",
+  "J",
+  "a",
+  "n",
+  "e",
+  "K",
+  "o",
+  "s",
+  "t",
+  "a",
+  "n",
+  "t",
+  "i",
+  "n"
+]
+```
+
 #### Zip
 
 // Combines employees and departments by index into a new sequence.
 
 ```csharp
 var zipped = employees.Zip(departments, (e, d) => $"{e["FirstName"]} - {d["ShortName"]}");
+```
+
+Serialized JSON (example):
+
+```json
+["Bob - HR", "Sarah - FN", "Douglas - FN", "Jane - TE", "Kostantin - TE"]
 ```
 
 ---
@@ -131,6 +256,17 @@ var joined = employees.Join(
 );
 ```
 
+Serialized JSON (example):
+
+```json
+[
+  { "Name": "Bob Jones", "Department": "Human Resources" },
+  { "Name": "Sarah Jameson", "Department": "Finance" },
+  { "Name": "Douglas Roberts", "Department": "Finance" },
+  { "Name": "Jane Stevens", "Department": "Technology" }
+]
+```
+
 #### Group Join
 
 // Groups employees by their department, producing hierarchical results.
@@ -144,12 +280,62 @@ var groupJoin = departments.GroupJoin(
 );
 ```
 
+Serialized JSON (example):
+
+```json
+[
+  {
+    "Department": "Human Resources",
+    "Employees": [{ "Id": 1, "FirstName": "Bob", "LastName": "Jones" }]
+  },
+  {
+    "Department": "Finance",
+    "Employees": [
+      { "Id": 2, "FirstName": "Sarah", "LastName": "Jameson" },
+      { "Id": 3, "FirstName": "Douglas", "LastName": "Roberts" }
+    ]
+  },
+  {
+    "Department": "Technology",
+    "Employees": [
+      { "Id": 4, "FirstName": "Jane", "LastName": "Stevens" },
+      { "Id": 5, "FirstName": "Kostantin", "LastName": "Spenst" }
+    ]
+  }
+]
+```
+
 #### Grouping
 
 // Groups employees by DepartmentId.
 
 ```csharp
 var grouped = employees.GroupBy(e => e["DepartmentId"]);
+```
+
+Serialized JSON (example):
+
+```json
+[
+  {
+    "DepartmentId": 1,
+    "Employees": [{ "Id": 1, "FirstName": "Bob", "LastName": "Jones" }]
+  },
+  {
+    "DepartmentId": 2,
+    "Employees": [
+      { "Id": 2, "FirstName": "Sarah", "LastName": "Jameson" },
+      { "Id": 3, "FirstName": "Douglas", "LastName": "Roberts" }
+    ]
+  },
+  {
+    "DepartmentId": 3,
+    "Employees": [
+      { "Id": 4, "FirstName": "Jane", "LastName": "Stevens" },
+      { "Id": 5, "FirstName": "Kostantin", "LastName": "Spenst" }
+    ]
+  }
+]
 ```
 
 ---
@@ -287,3 +473,170 @@ If you do not use `.ToList()`, the query result is an `IEnumerable<T>` and uses 
 
 - `.ToList()` = immediate, full copy in memory (modifiable, fixed snapshot)
 - No `.ToList()` = deferred, on-demand, minimal memory (not modifiable, always reflects current source)
+
+## JSON serialization of query results
+
+You can serialize LINQ query results to JSON using `System.Text.Json.JsonSerializer.Serialize`.
+If the result is an `IEnumerable<T>` you often want to materialize it first (for example with `.ToList()`) so the serializer gets a concrete collection.
+
+Example usage in code:
+
+```csharp
+using System.Text.Json;
+
+// materialize and serialize with indentation for readability
+var json = JsonSerializer.Serialize(managers.ToList(), new JsonSerializerOptions { WriteIndented = true });
+Console.WriteLine(json);
+```
+
+Note: the exact serialized output depends on which dataset you run. The examples below assume the dataset defined in `Program.cs` (which includes five employees). If you run the smaller dataset shown earlier in this README, the JSON will omit the extra entry.
+
+Sample serialized outputs (pretty-printed) for common query results:
+
+- Managers (array of objects):
+
+```json
+[
+  {
+    "Id": 1,
+    "FirstName": "Bob",
+    "LastName": "Jones",
+    "AnnualSalary": 60000.3,
+    "IsManager": true,
+    "DepartmentId": 1
+  },
+  {
+    "Id": 2,
+    "FirstName": "Sarah",
+    "LastName": "Jameson",
+    "AnnualSalary": 80000.1,
+    "IsManager": true,
+    "DepartmentId": 2
+  }
+]
+```
+
+- Employee names (array of strings):
+
+```json
+[
+  "Bob Jones",
+  "Sarah Jameson",
+  "Douglas Roberts",
+  "Jane Stevens",
+  "Kostantin Spenst"
+]
+```
+
+- High earners (objects with numeric salary):
+
+```json
+[
+  {
+    "Id": 2,
+    "FirstName": "Sarah",
+    "LastName": "Jameson",
+    "AnnualSalary": 80000.1,
+    "IsManager": true,
+    "DepartmentId": 2
+  },
+  {
+    "Id": 1,
+    "FirstName": "Bob",
+    "LastName": "Jones",
+    "AnnualSalary": 60000.3,
+    "IsManager": true,
+    "DepartmentId": 1
+  },
+  {
+    "Id": 5,
+    "FirstName": "Kostantin",
+    "LastName": "Spenst",
+    "AnnualSalary": 300000.2,
+    "IsManager": false,
+    "DepartmentId": 3
+  }
+]
+```
+
+- Joined results (anonymous objects with Name and Department):
+
+```json
+[
+  { "Name": "Bob Jones", "Department": "Human Resources" },
+  { "Name": "Sarah Jameson", "Department": "Finance" },
+  { "Name": "Douglas Roberts", "Department": "Finance" },
+  { "Name": "Jane Stevens", "Department": "Technology" },
+  { "Name": "Kostantin Spenst", "Department": "Technology" }
+]
+```
+
+- GroupJoin / hierarchical (departments with their employees):
+
+```json
+[
+  {
+    "Department": "Human Resources",
+    "Employees": [
+      {
+        "Id": 1,
+        "FirstName": "Bob",
+        "LastName": "Jones",
+        "AnnualSalary": 60000.3,
+        "IsManager": true,
+        "DepartmentId": 1
+      }
+    ]
+  },
+  {
+    "Department": "Finance",
+    "Employees": [
+      {
+        "Id": 2,
+        "FirstName": "Sarah",
+        "LastName": "Jameson",
+        "AnnualSalary": 80000.1,
+        "IsManager": true,
+        "DepartmentId": 2
+      },
+      {
+        "Id": 3,
+        "FirstName": "Douglas",
+        "LastName": "Roberts",
+        "AnnualSalary": 40000.2,
+        "IsManager": false,
+        "DepartmentId": 2
+      }
+    ]
+  },
+  {
+    "Department": "Technology",
+    "Employees": [
+      {
+        "Id": 4,
+        "FirstName": "Jane",
+        "LastName": "Stevens",
+        "AnnualSalary": 30000.2,
+        "IsManager": false,
+        "DepartmentId": 3
+      },
+      {
+        "Id": 5,
+        "FirstName": "Kostantin",
+        "LastName": "Spenst",
+        "AnnualSalary": 300000.2,
+        "IsManager": false,
+        "DepartmentId": 3
+      }
+    ]
+  }
+]
+```
+
+Tips:
+
+- Use `new JsonSerializerOptions { WriteIndented = true }` for readable output during development.
+- Materialize lazy sequences (e.g., `.ToList()`) before serializing if you want a snapshot; otherwise serialization will enumerate the sequence at serialization time.
+- If you use typed POCOs (recommended), serialization will be simpler and safer than serializing `Dictionary<string, object>` values.
+
+---
