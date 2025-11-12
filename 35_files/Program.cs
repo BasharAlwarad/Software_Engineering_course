@@ -8,14 +8,14 @@ using System.Text.Json;
 Console.WriteLine("Hello, World!");
 
 // TXT CHAPTER: CRUD for index.txt
-static void BasharCreateTxt(string text) => File.WriteAllText("index.txt", text);
+static void CreateTxt(string text) => File.WriteAllText("index.txt", text);
 static string ReadTxt() => File.ReadAllText("index.txt");
 static void UpdateTxt(string newText) => File.WriteAllText("index.txt", newText);
 static void DeleteTxt() { if (File.Exists("index.txt")) File.Delete("index.txt"); }
 static void AppendTxt(string text) => File.AppendAllText("index.txt", text);
 
 // // TXT CRUD Example
-BasharCreateTxt("First line in txt file.");
+CreateTxt("First line in txt file.");
 Console.WriteLine($"ReadTxt: {ReadTxt()}");
 AppendTxt("\nAppended line.");
 Console.WriteLine($"After append: {ReadTxt()}");
