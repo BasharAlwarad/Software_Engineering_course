@@ -6,8 +6,8 @@ class Program {
         // Console.WriteLine("--- Simple Example ---");
         // SimpleChefExample.Run();
 
-        // Console.WriteLine("--- Delegates Example ---");
-        // DelegatesExample.Run();
+        Console.WriteLine("--- Delegates Example ---");
+        DelegatesExample.Run();
 
         // Console.WriteLine("\n--- Func Example ---");
         // FuncExample.Run();
@@ -16,7 +16,7 @@ class Program {
         // ActionExample.Run();
 
         // Console.WriteLine("\n--- Events Example ---");
-        EventExample.Run();
+        // EventExample.Run();
 
         // Console.WriteLine("\n--- Events Doorbell Example ---");
         // EventsDoorbellExample.Run();

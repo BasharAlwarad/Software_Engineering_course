@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
-
-using System;
+﻿using System;
 
 // Animal hierarchy (simplified from 31_polymorphism)
 class Animal

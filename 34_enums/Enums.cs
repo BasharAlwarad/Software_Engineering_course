@@ -14,3 +14,4 @@ enum Day : byte // Underlying type can be specified
 
 // Task status used in the minimal Task example
 enum TaskStatus { NotStarted, InProgress, Completed, Cancelled }
+enum Errors { NotFound=404, ServerError=500, AuthError=401, UnAuthorized=403 }
