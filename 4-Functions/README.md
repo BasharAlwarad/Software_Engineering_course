@@ -22,7 +22,6 @@
   - [➕ Rest Parameters](#-rest-parameters)
   - [🔗 Callbacks](#-callbacks)
   - [🧭 This Parameter](#-this-parameter)
-  - [� Further Reading](#-further-reading)
 
 ---
 
@@ -181,13 +180,6 @@ const btn: Button = {
   },
 };
 ```
-
----
-
-## 📖 Further Reading
-
-- [W3Schools: TypeScript Functions](https://www.w3schools.com/typescript/typescript_functions.php)
-- [TypeScript Handbook: Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
 
 ---
 
