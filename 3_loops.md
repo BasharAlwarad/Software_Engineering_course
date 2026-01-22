@@ -1,7 +1,7 @@
 # Block 3: Loops in JavaScript (No Arrays)
 
 > **Educational content by Bashar Alwarad**  
-> Model Context Protocol (MCP) integration with Pokemon data.
+> javascript loops.
 
 ## Connect with Me [![LinkedIn](https://img.shields.io/badge/LinkedIn-Bashar%20AlWarad-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bashar-alwarad-2a960b1b6/)
 
