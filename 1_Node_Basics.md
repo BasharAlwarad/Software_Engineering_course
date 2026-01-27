@@ -68,9 +68,9 @@ Hello from Node.js!
 - `process.argv[1]`: path to your script
 - `process.argv[2]` and beyond: your arguments
 
-### Example 1: Simple Argument Echo
+### Example 1: Simple Argument index
 
-Create `echo.js`:
+Create `index.js`:
 
 ```javascript
 // Get arguments
@@ -83,7 +83,7 @@ console.log('Number of args:', args.length);
 Run:
 
 ```bash
-node echo.js hello world
+node index.js hello world
 ```
 
 Output:
@@ -132,5 +132,6 @@ Next year you will be 26
 - ✅ `process.argv` accesses command-line arguments.
 - ✅ `process.argv[0]` and `[1]` are node & script paths; your args start at `[2]`.
 - ✅ Use `process.argv.slice(2)` to get only your arguments.
+- ✅ arg input type is string use `parseInt(variable)` to parse it to number when you need to.
 
 ---
