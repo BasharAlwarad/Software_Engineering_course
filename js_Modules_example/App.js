@@ -1,10 +1,15 @@
-import { Header } from './components/Header.js';
+import Footer from './components/Footer.js';
+import Header from './components/Header.js';
+import FetchOneProduct from './components/FetchOneProduct.js';
 import MainSection from './components/MainSection.js';
 
-const App = async () => {
+var App = async function () {
   return `
-    ${Header()}
-    ${await MainSection()}
-    `;
+${Header()}
+${FetchOneProduct()}
+${await MainSection()}
+${Footer()}
+`;
 };
+
 export default App;

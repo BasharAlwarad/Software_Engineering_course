@@ -1,4 +1,5 @@
-export const Header = () => `
+var Header = function () {
+  return `
 <header class="m-6 border-2 p-4">
         <nav class="flex flex-row items-center justify-between gap-4">
           <h1>Welcome to our site</h1>
@@ -10,3 +11,6 @@ export const Header = () => `
         </nav>
       </header>
 `;
+};
+
+export default Header;

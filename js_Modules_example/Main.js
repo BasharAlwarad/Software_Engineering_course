@@ -1,10 +1,8 @@
-import App from './app.js';
+import App from './App.js';
 
-const root = document.getElementById('root');
+var root = document.getElementById('root');
 
-const render = async () => {
-  const html = await App();
-  root.innerHTML = html;
+var render = async function () {
+  root.innerHTML = await App();
 };
-
 render();
