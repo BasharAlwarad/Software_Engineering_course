@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Contact | Tailwind Layout</title>
+  </head>
+  <!-- flex: displays as flexbox | flex-col: arranges children vertically | min-h-screen: full viewport height (100vh) -->
+  <body class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <!-- bg-slate-800: dark gray background | text-white: white text color -->
+    <nav class="bg-slate-800 text-white">
+      <!-- flex: flexbox layout | justify-between: space items apart horizontally | items-center: center items vertically | px-6: 24px horizontal padding | py-4: 16px vertical padding -->
+      <div class="flex justify-between items-center px-6 py-4">
+        <!-- text-2xl: 24px font size | font-bold: font weight 700 -->
+        <h1 class="text-2xl font-bold">Tailwind Layout Demo</h1>
+        <!-- flex: flexbox layout | gap-6: 24px gap between items -->
+        <ul class="flex gap-6">
+          <!-- hover:text-blue-400: changes text color to blue on mouse hover -->
+          <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+          <li>
+            <a href="contact.html" class="hover:text-blue-400">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- max-w-4xl: maximum width of 56rem (896px) | mx-auto: centers element horizontally with auto margins -->
+      <div class="max-w-4xl mx-auto">
+        <!-- text-4xl: 36px font size | font-bold: font weight 700 | mb-6: 24px margin bottom -->
+        <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+        <!-- text-lg: 18px font size | mb-8: 32px margin bottom | text-slate-700: dark gray text color -->
+        <p class="text-lg mb-8 text-slate-700">
+          This page demonstrates a horizontal flex layout for contact
+          information.
+        </p>
+
+        <!-- Horizontal Flex Layout -->
+        <!-- mb-12: 48px margin bottom -->
+        <section class="mb-12">
+          <!-- bg-teal-100: light teal background | p-6: 24px padding | rounded: 4px border radius | border: 1px border | border-teal-300: teal border | flex-1: equal width -->
+          <div class="bg-teal-100 p-6 rounded border border-teal-300 flex-1">
+            <!-- font-bold: font weight 700 | mb-2: 8px margin bottom | text-lg: 18px font size -->
+            <h4 class="font-bold mb-2 text-lg">Email</h4>
+            <!-- text-sm: 14px font size -->
+            <p class="text-sm">contact@example.com</p>
+          </div>
+          <!-- bg-teal-100: light teal background | flex-1: equal width -->
+          <div class="bg-teal-100 p-6 rounded border border-teal-300 flex-1">
+            <h4 class="font-bold mb-2 text-lg">Phone</h4>
+            <p class="text-sm">+1 (555) 123-4567</p>
+          </div>
+          <!-- bg-teal-100: light teal background | flex-1: equal width -->
+          <div class="bg-teal-100 p-6 rounded border border-teal-300 flex-1">
+            <h4 class="font-bold mb-2 text-lg">Address</h4>
+            <p class="text-sm">123 Learning Street</p>
+          </div>
+        </section>
+
+        <!-- Flex Column Example: Form Layout -->
+        <!-- mb-12: 48px margin bottom -->
+        <section class="mb-12">
+          <!-- text-2xl: 24px font size | font-bold: font weight 700 | mb-4: 16px margin bottom -->
+          <h3 class="text-2xl font-bold mb-4">Contact Form</h3>
+          <!-- flex: flexbox | flex-col: vertical arrangement | gap-4: 16px gap between items | max-w-md: maximum width of 28rem (448px) -->
+        </section>
+
+        <!-- Flex Column Example: Form Layout -->
+        <section class="mb-12">
+          <h3 class="text-2xl font-bold mb-4">Contact Form</h3>
+          <form class="flex flex-col gap-4 max-w-md">
+            <div class="flex flex-col">
+              <label class="font-bold mb-1">Name</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                class="border border-slate-300 p-2 rounded"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label class="font-bold mb-1">Email</label>
+              <input
+                type="email"
+                placeholder="Your email"
+                class="border border-slate-300 p-2 rounded"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label class="font-bold mb-1">Message</label>
+              <textarea
+                placeholder="Your message"
+                rows="4"
+                class="border border-slate-300 p-2 rounded"
+              ></textarea>
+            </div>
+            <!-- bg-blue-500: blue background | text-white: white text | p-2: 8px padding | rounded: 4px border radius | hover:bg-blue-600: darker blue on mouse hover -->
+            <button
+              type="submit"
+              class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+            >
+              Send Message
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- bg-slate-800: dark background | text-white: white text -->
+    <footer class="bg-slate-800 text-white">
+      <!-- flex: flexbox | justify-between: space items apart | items-center: vertical center | px-6: 24px horizontal padding | py-4: 16px vertical padding -->
+      <div class="flex justify-between items-center px-6 py-4">
+        <p>&copy; 2026 Tailwind Layout Demo</p>
+        <p>Teaching Resources</p>
+      </div>
+    </footer>
+  </body>
+</html>

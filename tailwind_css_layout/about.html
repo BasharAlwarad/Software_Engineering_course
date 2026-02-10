@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>About | Tailwind Layout</title>
+  </head>
+  <!-- flex: displays as flexbox | flex-col: arranges children vertically | min-h-screen: full viewport height (100vh) -->
+  <body class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <!-- bg-slate-800: dark gray background | text-white: white text color -->
+    <nav class="bg-slate-800 text-white">
+      <!-- flex: flexbox layout | justify-between: space items apart horizontally | items-center: center items vertically | px-6: 24px horizontal padding | py-4: 16px vertical padding -->
+      <div class="flex justify-between items-center px-6 py-4">
+        <!-- text-2xl: 24px font size | font-bold: font weight 700 -->
+        <h1 class="text-2xl font-bold">Tailwind Layout Demo</h1>
+        <!-- flex: flexbox layout | gap-6: 24px gap between items -->
+        <ul class="flex gap-6">
+          <!-- hover:text-blue-400: changes text color to blue on mouse hover -->
+          <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+          <li>
+            <a href="contact.html" class="hover:text-blue-400">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- max-w-4xl: maximum width of 56rem (896px) | mx-auto: centers element horizontally with auto margins -->
+      <div class="max-w-4xl mx-auto">
+        <!-- text-4xl: 36px font size | font-bold: font weight 700 | mb-6: 24px margin bottom -->
+        <h2 class="text-4xl font-bold mb-6">About Us</h2>
+        <!-- text-lg: 18px font size | mb-8: 32px margin bottom | text-slate-700: dark gray text color -->
+        <p class="text-lg mb-8 text-slate-700">
+          Learn about grid layouts in Tailwind CSS.
+        </p>
+
+        <!-- Grid Example: Responsive Grid -->
+        <!-- mb-12: 48px margin bottom -->
+        <section class="mb-12">
+          <!-- bg-red-100: light red background | p-4: 16px padding | rounded: 4px border radius | border: 1px border | border-red-300: red border color -->
+          <div class="bg-red-100 p-4 rounded border border-red-300">
+            <!-- font-bold: font weight 700 | mb-2: 8px margin bottom -->
+            <h4 class="font-bold mb-2">Item 1</h4>
+            <!-- text-sm: 14px font size -->
+            <p class="text-sm">Grid with 3 columns</p>
+          </div>
+          <!-- bg-yellow-100: light yellow background -->
+          <div class="bg-yellow-100 p-4 rounded border border-yellow-300">
+            <h4 class="font-bold mb-2">Item 2</h4>
+            <p class="text-sm">Responsive design</p>
+          </div>
+          <!-- bg-indigo-100: light indigo background -->
+          <div class="bg-indigo-100 p-4 rounded border border-indigo-300">
+            <h4 class="font-bold mb-2">Item 3</h4>
+            <p class="text-sm">Auto gap handling</p>
+          </div>
+          <!-- bg-pink-100: light pink background -->
+          <div class="bg-pink-100 p-4 rounded border border-pink-300">
+            <h4 class="font-bold mb-2">Item 4</h4>
+            <p class="text-sm">Grid item</p>
+          </div>
+          <!-- bg-cyan-100: light cyan background -->
+          <div class="bg-cyan-100 p-4 rounded border border-cyan-300">
+            <h4 class="font-bold mb-2">Item 5</h4>
+            <p class="text-sm">Grid item</p>
+          </div>
+          <!-- bg-orange-100: light orange background -->
+          <div class="bg-orange-100 p-4 rounded border border-orange-300">
+            <h4 class="font-bold mb-2">Item 6</h4>
+            <p class="text-sm">Grid item</p>
+          </div>
+
+          <!-- Nested Flex Example -->
+          <!-- mb-12: 48px margin bottom -->
+          <!-- flex-1: equal width | bg-green-100: light green background | p-4: 16px padding | rounded: 4px border radius | border: 1px border -->
+          <div class="flex-1 bg-green-100 p-4 rounded border border-green-300">
+            <!-- font-bold: font weight 700 | mb-3: 12px margin bottom -->
+            <h4 class="font-bold mb-3">Left Section</h4>
+            <!-- flex: flexbox | flex-col: vertical arrangement | gap-2: 8px gap between items -->
+            <div class="flex flex-col gap-2">
+              <!-- bg-green-200: darker green background | p-2: 8px padding | rounded: 4px border radius -->
+              <div class="bg-green-200 p-2 rounded">Nested Item 1</div>
+              <div class="bg-green-200 p-2 rounded">Nested Item 2</div>
+            </div>
+          </div>
+          <!-- flex-1: equal width | bg-blue-100: light blue background -->
+          <div class="flex-1 bg-blue-100 p-4 rounded border border-blue-300">
+            <h4 class="font-bold mb-3">Right Section</h4>
+            <p class="text-sm">Using nested flex with flex-col</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- bg-slate-800: dark background | text-white: white text -->
+    <footer class="bg-slate-800 text-white">
+      <div class="flex justify-between items-center px-6 py-4">
+        <p>&copy; 2026 Tailwind Layout Demo</p>
+        <p>Teaching Resources</p>
+      </div>
+    </footer>
+  </body>
+</html>
