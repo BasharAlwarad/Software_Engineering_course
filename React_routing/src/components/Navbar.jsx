@@ -1,24 +1,24 @@
 import { Link } from 'react-router';
 
 const Navbar = () => {
+  const name = 'asdfasdfasdfasdfasdfasdfasdfasdfasdfasdföasdfölasdöfl';
+
   return (
-    <nav className="bg-gray-800 p-4 text-white">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-lg font-bold">
-          MyApp
-        </Link>
-        <div className="flex space-x-4">
-          <Link to="/" className="hover:underline">
-            Home
-          </Link>
-          <Link to="/about" className="hover:underline">
-            About
-          </Link>
-          <Link to="/contact" className="hover:underline">
-            Contact
-          </Link>
-        </div>
-      </div>
+    <nav className="bg-pink-900">
+      <ul className="flex gap-6 justify-between">
+        <li>
+          <Link to={`/`}>Home</Link>
+        </li>
+        <li>
+          <Link to={`/users/1/${name}/john/gustavo`}>Users</Link>
+        </li>
+        <li>
+          <Link to={`/about`}> About</Link>
+        </li>
+        <li>
+          <Link to={`/contact`}> Contact</Link>
+        </li>
+      </ul>
     </nav>
   );
 };
