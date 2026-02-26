@@ -1,6 +1,0 @@
-@import 'tailwindcss';
-@plugin "daisyui";
-.x {
-  color: white;
-  border: 2px solid black;
-}
