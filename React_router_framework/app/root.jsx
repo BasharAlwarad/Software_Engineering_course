@@ -1,12 +1,13 @@
 import {
   isRouteErrorResponse,
-  Link,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from 'react-router';
+
+import Nav from './components/Nav';
 
 import './app.css';
 
@@ -44,19 +45,7 @@ export function Layout({ children }) {
 export default function App() {
   return (
     <div>
-      <nav>
-        <ul className="flex justify-around items-center gap-4">
-          <li>
-            <Link to={`/`}>Home</Link>
-          </li>
-          <li>
-            <Link to={`/about`}>About</Link>
-          </li>
-          <li>
-            <Link to={`/dashboard`}>Dashboard</Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       <Outlet />
     </div>
   );

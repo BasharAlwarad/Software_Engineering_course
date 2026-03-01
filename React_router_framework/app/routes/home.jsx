@@ -1,13 +1,33 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router';
+import {
+  isRouteErrorResponse,
+  Link,
+  useLoaderData,
+  useRouteError,
+} from 'react-router';
 
 // The loader runs *before* the component renders
-export async function loader() {
+export async function clientLoader() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   if (!res.ok)
     throw new Response('Failed to fetch posts', { status: res.status });
-  const posts = await res.json();
-  return posts;
+  return await res.json();
 }
+
+/**
+ * @export
+ * @return {*}
+ * returns the fallback component to render while waiting for the loader to resolve.
+ */
+export function HydrateFallback() {
+  return <div>Loading...</div>;
+}
+
+// export async function loader() {
+//   const res = await fetch(`http://localhost:3001/api/users`);
+//   if (!res.ok)
+//     throw new Response('Failed to fetch posts', { status: res.status });
+//   return await res.json();
+// }
 
 // Optional meta using loaded data
 export function meta() {
@@ -18,7 +38,10 @@ export function meta() {
 }
 
 // Component renders using the loaded data
+// export default function Home() {
+// const { localData, externalData } = useLoaderData();
 export default function Home({ loaderData }) {
+  // console.log(localData);
   const posts = loaderData;
 
   return (
@@ -27,8 +50,9 @@ export default function Home({ loaderData }) {
       <ul className="space-y-2">
         {posts.map((post) => (
           <li key={post.id} className="border p-2 rounded">
-            <h2 className="font-semibold">{post.title}</h2>
-            <p>{post.body}</p>
+            <Link to={`post/${post?.id}`}>
+              <h2 className="font-semibold">{post.title}</h2>
+            </Link>
           </li>
         ))}
       </ul>
