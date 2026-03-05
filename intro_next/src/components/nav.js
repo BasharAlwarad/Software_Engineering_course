@@ -22,6 +22,11 @@ const nav = () => {
             Contact
           </Link>
         </li>
+        <li>
+          <Link href="/register" className="text-blue-600 hover:underline">
+            Register
+          </Link>
+        </li>
       </ul>
     </nav>
   );
