@@ -7,9 +7,11 @@ const CART_STORAGE_KEY = 'fake-store-cart';
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || []
-  );
+  const [items, setItems] = useState(() => {
+    if (typeof window === 'undefined') return [];
+    const stored = localStorage.getItem(CART_STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  });
 
   useEffect(() => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
