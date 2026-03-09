@@ -7,13 +7,30 @@ const CART_STORAGE_KEY = 'fake-store-cart';
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || []
-  );
+  const [items, setItems] = useState([]);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-  }, [items]);
+    try {
+      const storedCart = window.localStorage.getItem(CART_STORAGE_KEY);
+      const parsedCart = storedCart ? JSON.parse(storedCart) : [];
+
+      setItems(Array.isArray(parsedCart) ? parsedCart : []);
+    } catch {
+      // Reset to empty cart if localStorage has invalid JSON.
+      setItems([]);
+    } finally {
+      setHasInitialized(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hasInitialized) {
+      return;
+    }
+
+    window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+  }, [items, hasInitialized]);
 
   function addItem(product) {
     setItems((prev) => {

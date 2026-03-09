@@ -24,6 +24,12 @@ export default function SiteNavbar() {
               <span className="badge badge-primary badge-sm">{itemCount}</span>
             </Link>
           </li>
+          <li>
+            <Link href="/signup">Signup</Link>
+          </li>
+          <li>
+            <Link href="/users">Users</Link>
+          </li>
         </ul>
       </nav>
     </header>
