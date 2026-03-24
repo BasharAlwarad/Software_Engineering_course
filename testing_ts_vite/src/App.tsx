@@ -1,7 +1,9 @@
+import Greetings from './components/Greetings';
 const App = () => {
   return (
     <main>
-      <button className="btn ">click</button>
+      <Greetings name={'John'} />
+      <Greetings />
     </main>
   );
 };
