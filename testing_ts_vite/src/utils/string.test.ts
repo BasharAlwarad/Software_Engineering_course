@@ -1,13 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { isPalindrome } from './string';
 
-describe('string utilities', () => {
-  it('detects palindromes (toBeTruthy / toBeFalsy)', () => {
-    expect(isPalindrome('madam')).toBeTruthy();
-    expect(isPalindrome('hello')).toBeFalsy();
+describe('test truth or false', () => {
+  it('expect Mom to be mom', () => {
+    expect(isPalindrome('MOM')).toBeTruthy();
   });
-
-  it('matches pattern (toMatch)', () => {
-    expect('WebDev WBS Coding School').toMatch(/Coding/);
+  it('expect Hello to fail', () => {
+    expect(isPalindrome('hello')).toBeFalsy();
   });
 });

@@ -1,11 +1,7 @@
-import Greetings from './components/Greetings';
+import { unique } from './utils/array';
 const App = () => {
-  return (
-    <main>
-      <Greetings name={'John'} />
-      <Greetings />
-    </main>
-  );
+  console.log(unique(['1', true, null, undefined, 1, 1, 2, 2, 2, 3, 3, 3]));
+  return <main>hello</main>;
 };
 
 export default App;

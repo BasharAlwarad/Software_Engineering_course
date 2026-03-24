@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { greetAsync, failAsync } from './async';
+import { greetAsync, failAsync, getUsers } from './async';
 
 describe('async utilities', () => {
   it('resolves to greeting (resolves)', async () => {
