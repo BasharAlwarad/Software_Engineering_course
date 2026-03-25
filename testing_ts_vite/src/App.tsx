@@ -1,7 +1,17 @@
-import { unique } from './utils/array';
+import Button from './components/Button';
+import Greeting from './components/Greeting';
+import UserProfile from './components/UserProfile';
+
 const App = () => {
-  console.log(unique(['1', true, null, undefined, 1, 1, 2, 2, 2, 3, 3, 3]));
-  return <main>hello</main>;
+  return (
+    <main>
+      <Greeting name="John" />
+      <Greeting />
+      <Button />
+      <br />
+      <UserProfile />
+    </main>
+  );
 };
 
 export default App;

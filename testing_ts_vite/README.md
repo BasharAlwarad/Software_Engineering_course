@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# Vitest Mocking and Spying (Short Lecture)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+When code depends on network, time, randomness, or other side effects, tests become slow and flaky.
 
-Currently, two official plugins are available:
+Mocks and spies keep tests fast and focused:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Mocks: replace behavior (for example, fake `fetch` responses).
+- Spies: observe behavior (for example, confirm `console.log` was called).
 
-## React Compiler
+## Why mock?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Save budget: avoid paid API calls in CI.
+- Protect production: no calls to live endpoints.
+- Speed up feedback: fake responses are instant.
+- Isolate behavior: test one unit at a time.
 
-## Expanding the ESLint configuration
+## Minimal examples in this project
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Function-level mock + spy: `src/utils/getPost.ts` and `src/utils/getPost.test.ts`
+- Component-level fetch mock: `src/components/UserProfile.test.tsx`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Quick takeaways
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Use a spy when you only need to observe calls.
+- Use a mock when real behavior should not run.
+- `vi.stubGlobal('fetch', ...)` is the easiest way to fake network calls.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Run tests
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm test
 ```
