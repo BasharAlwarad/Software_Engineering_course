@@ -1,0 +1,27 @@
+{
+  "name": "my-ts-app",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "type": "module",
+  "imports": {
+    "#utils": {
+      "development": "./src/utils/index.ts",
+      "default": "./dist/utils/index.js"
+    },
+    "#pages": {
+      "development": "./src/pages/index.ts",
+      "default": "./dist/pages/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsx --watch --conditions development src/app.ts",
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/app.js"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^6.0.2"
+  }
+}
