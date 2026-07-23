@@ -14,9 +14,17 @@
 
 import { sql } from '@/lib/neondb.js';
 
-export async function GET() {
+export async function GET(request) {
   try {
-    const users = await sql`SELECT * FROM users `;
+    const { searchParams } = new URL(request.url);
+    const search = searchParams.get('search') || '';
+
+    const users = await sql`
+      SELECT id, email, created_at
+      FROM users
+      WHERE email ILIKE ${'%' + search + '%'}
+      ORDER BY created_at DESC
+    `;
 
     return Response.json({ users });
   } catch (error) {
