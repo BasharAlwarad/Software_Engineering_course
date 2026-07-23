@@ -19,6 +19,9 @@ export default function SiteNavbar() {
             <Link href="/">Home</Link>
           </li>
           <li>
+            <Link href="/signup">Signup</Link>
+          </li>
+          <li>
             <Link href="/cart" className="gap-2">
               Cart
               <span className="badge badge-primary badge-sm">{itemCount}</span>
