@@ -14,9 +14,17 @@
 
 import { sql } from '@/lib/neondb.js';
 
-export async function GET() {
+export async function GET(request) {
   try {
-    const users = await sql`SELECT * FROM users `;
+    console.log(request.url);
+    const { searchParams } = new URL(request.url);
+    const search1 = searchParams.get('search') || '';
+    const search2 = searchParams.get('search') || '';
+    // const users = await sql`SELECT * FROM users `;
+    const users = await sql`
+      SELECT * FROM users
+      WHERE ing1,ing2 ILIKE [${'%' + search1 + '%'},${'%' + search2 + '%'} ]
+    `;
 
     return Response.json({ users });
   } catch (error) {
